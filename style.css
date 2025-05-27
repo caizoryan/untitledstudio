@@ -1,0 +1,25 @@
+* {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+		font-family: sans-serif;
+}
+
+.websites-container{
+	margin:auto;
+	width: 800px;
+	display: flex;
+	justify-content: center;
+}
+
+.project {
+		margin: 100px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.hidden {
+	width: 100px;
+	opacity: 0;
+	pointer-events: none;
+}

@@ -1,0 +1,32 @@
+%%
+function id() {
+	return "id-" + Math.floor(Math.random() * Math.random() * 1000000)
+}
+
+%%
+<html>
+<head>
+	<link rel="stylesheet" href="./style.css">
+	<title>Untitled Studio</title>
+</head>
+<body>
+
+	<div class="websites-container">
+		%% for (let website of websites) { %%
+		<div class="project" id="%%+id()%%">
+			<h1> %%+ website.title %% </h1>
+			%% if (website.type == "video") {%%
+			<video class="hidden" src="%%+website.cover%%"> </img>
+			%% } %%
+
+			%% if (website.type == "image") {%%
+			<img class="hidden" src="%%+website.cover%%"> </img>
+			%% } %%
+		</div>
+		%% } %%
+
+	<div>
+</body>
+
+<script src="./script.js"> </script>
+</html>
