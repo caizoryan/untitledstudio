@@ -4,38 +4,61 @@
 	<link rel="stylesheet" href="./style.css">
 	<title>Untitled Studio</title>
 </head>
+
+<style>
+
+	.project[size="1"]{
+		grid-template-columns: calc(var(--size) * 1) auto;
+	}
+
+	.project[size="2"]{
+		grid-template-columns: calc(var(--size) * 2) auto;
+	}
+
+	.project[size="3"]{
+		grid-template-columns: calc(var(--size) * 3) auto;
+	}
+
+	.project[size="4"]{
+		grid-template-columns: calc(var(--size) * 4) auto;
+	}
+
+	.project[size="5"]{
+		grid-template-columns: calc(var(--size) * 5) auto;
+	}
+
+</style>
+
 <body>
+	
 	<div class="options">
 		
-		<div class="buttons"
-				 index="0"
-				 active="true"
-				 ></div>
+
+			<div class="button" index="0" size="0"></div>
+
 		
-		<div class="buttons"
-				 index="1"
-				 active="false"
-				 ></div>
+
+			<div class="button" index="1" size="1"></div>
+
 		
-		<div class="buttons"
-				 index="2"
-				 active="false"
-				 ></div>
+
+			<div class="button" index="2" size="2"></div>
+
 		
-		<div class="buttons"
-				 index="3"
-				 active="false"
-				 ></div>
+
+			<div class="button" index="3" size="3"></div>
+
 		
-		<div class="buttons"
-				 index="4"
-				 active="false"
-				 ></div>
+
+			<div class="button" index="4" size="4"></div>
+
 		
+	
+
 	</div>
 	<div class="websites-container">
 		
-		<div class="project" id="id-728627">
+		<div class="project" size="2" id="id-269156">
 			<h1> 100m Screenings </h1>
 			
 
@@ -44,17 +67,37 @@
 			
 		</div>
 		
-		<div class="project" id="id-476874">
-			<h1> Gradex Website </h1>
+		<div class="project" size="2" id="id-129700">
+			<h1> Alt-Skool Symposium </h1>
+			
+			<video class="hidden" src="./websites/Alt-Skool Symposium/cover.mp4"> </img>
 			
 
 			
 		</div>
 		
-		<div class="project" id="id-560890">
+		<div class="project" size="2" id="id-464604">
+			<h1> Gradex Website </h1>
+			
+			<video class="hidden" src="./websites/Gradex Website/cover.mp4"> </img>
+			
+
+			
+		</div>
+		
+		<div class="project" size="2" id="id-207570">
 			<h1> Internet Landlords  </h1>
 			
 			<video class="hidden" src="./websites/Internet Landlords /cover.mp4"> </img>
+			
+
+			
+		</div>
+		
+		<div class="project" size="2" id="id-212045">
+			<h1> Salankar Pashine & Associates </h1>
+			
+			<video class="hidden" src="./websites/Salankar Pashine & Associates/cover.mp4"> </img>
 			
 
 			

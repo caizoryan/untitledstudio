@@ -1,3 +1,10 @@
+:root{
+		--width: 800px;
+		--block-width: 3rem;
+		--gap: calc((var(--width) - (5 * var(--block-width)))/4);
+		--size: calc(var(--gap) + var(--block-width));
+}
+
 * {
 		padding: 0;
 		margin: 0;
@@ -7,7 +14,7 @@
 
 .websites-container{
 	margin:auto;
-	width: 800px;
+	width: var(--width);
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -16,14 +23,26 @@
 .project {
 	margin: 1em;
 	display: grid;
-	grid-template-columns: auto 200px;
 }
 
 .project:hover{
-		cursor: pointer;
-		border: 1px solid red;
+	cursor: pointer;
+	border: 1px solid red;
 }
 
+.options {
+	margin:auto;
+	width: var(--width);
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: calc((var(--width) - (5 * var(--block-width)))/4);
+}
+
+.button {
+		width: var(--block-width);
+		height:var(--block-width);
+		border: 1px solid black;
+}
 .hidden {
 	width: 100%;
 	opacity: 0;

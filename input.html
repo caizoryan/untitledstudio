@@ -9,18 +9,29 @@ function id() {
 	<link rel="stylesheet" href="./style.css">
 	<title>Untitled Studio</title>
 </head>
+
+<style>
+%%for (const i of Array(5).keys()) {%%
+	.project[size="%%+i+1%%"]{
+		grid-template-columns: calc(var(--size) * %%+i+1%%) auto;
+	}
+%%}%%
+</style>
+
 <body>
+	%%if (true) {%%
 	<div class="options">
 		%%for (const i of Array(5).keys()) {%%
-		<div class="buttons"
-				 index="%%+i%%"
-				 active="%%+ i == 0 ? "true" : "false" %%"
-				 ></div>
-		%%}%%
+
+			<div class="button" index="%%+i%%" size="%%+i%%"></div>
+
+		%% } %%
+	%%}%%
+
 	</div>
 	<div class="websites-container">
 		%% for (let website of websites) { %%
-		<div class="project" id="%%+id()%%">
+		<div class="project" size="2" id="%%+id()%%">
 			<h1> %%+ website.title %% </h1>
 			%% if (website.type == "video") {%%
 			<video class="hidden" src="%%+website.cover%%"> </img>

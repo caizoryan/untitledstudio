@@ -14,32 +14,59 @@ html += `
 	<link rel="stylesheet" href="./style.css">
 	<title>Untitled Studio</title>
 </head>
+
+<style>
+`
+for (const i of Array(5).keys()) {
+html += `
+	.project[size="`
+
+html += i+1
+
+html += `"]{
+		grid-template-columns: calc(var(--size) * `
+
+html += i+1
+
+html += `) auto;
+	}
+`
+}
+html += `
+</style>
+
 <body>
+	`
+if (true) {
+html += `
 	<div class="options">
 		`
 for (const i of Array(5).keys()) {
 html += `
-		<div class="buttons"
-				 index="`
+
+			<div class="button" index="`
 
 html += i
 
-html += `"
-				 active="`
+html += `" size="`
 
-html +=  i == 0 ? "true" : "false" 
+html += i
 
-html += `"
-				 ></div>
+html += `"></div>
+
 		`
+ } 
+html += `
+	`
 }
 html += `
+
 	</div>
 	<div class="websites-container">
 		`
  for (let website of websites) { 
 html += `
-		<div class="project" id="`
+		<div class="project" size="2" id="`
 
 html += id()
 
