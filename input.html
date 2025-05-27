@@ -10,7 +10,14 @@ function id() {
 	<title>Untitled Studio</title>
 </head>
 <body>
-
+	<div class="options">
+		%%for (const i of Array(5).keys()) {%%
+		<div class="buttons"
+				 index="%%+i%%"
+				 active="%%+ i == 0 ? "true" : "false" %%"
+				 ></div>
+		%%}%%
+	</div>
 	<div class="websites-container">
 		%% for (let website of websites) { %%
 		<div class="project" id="%%+id()%%">
@@ -24,7 +31,6 @@ function id() {
 			%% } %%
 		</div>
 		%% } %%
-
 	<div>
 </body>
 

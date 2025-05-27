@@ -15,8 +15,27 @@ html += `
 	<title>Untitled Studio</title>
 </head>
 <body>
+	<div class="options">
+		`
+for (const i of Array(5).keys()) {
+html += `
+		<div class="buttons"
+				 index="`
 
-	<div class="main-container">
+html += i
+
+html += `"
+				 active="`
+
+html +=  i == 0 ? "true" : "false" 
+
+html += `"
+				 ></div>
+		`
+}
+html += `
+	</div>
+	<div class="websites-container">
 		`
  for (let website of websites) { 
 html += `
@@ -53,11 +72,10 @@ html += `"> </img>
 			`
  } 
 html += `
-		<div>
+		</div>
 		`
  } 
 html += `
-
 	<div>
 </body>
 

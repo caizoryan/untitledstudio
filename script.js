@@ -1,20 +1,18 @@
 function init(){
 	let projects = document.querySelectorAll(".project")
-		projects.forEach((project) => {
-			project.onmouseenter = hover_fn(project)
-		})
-
-	// let images = document.querySelectorAll(".hidden")
-	// console.log("hello world by")
-	// images.forEach(img => img.style.opacity = .5)
+	projects.forEach(add_listeners)
 }
 
-function hover_fn(element){
+function add_listeners(element){
 	let id = element.id
 	let image = document.querySelector("#" + id + " .hidden")
-	return () => {
-		element.style.border = "1px solid red"
+
+	element.onmouseenter = () => {
 		image.style.opacity = 1 
+	}
+
+	element.onmouseleave = () => {
+		image.style.opacity = 0 
 	}
 }
 
