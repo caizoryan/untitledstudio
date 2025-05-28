@@ -1,5 +1,5 @@
 :root{
-		--width: 800px;
+		--width: 90vw;
 		--block-width: 3rem;
 		--gap: calc((var(--width) - (5 * var(--block-width)))/4);
 		--size: calc(var(--gap) + var(--block-width));
@@ -12,6 +12,10 @@
 		font-family: sans-serif;
 }
 
+body {
+	background-color: rgba(255,255,120,.1);
+}
+
 .websites-container{
 	margin:auto;
 	width: var(--width);
@@ -20,31 +24,54 @@
 	flex-direction: column;
 }
 
+.project h1 {
+	opacity: .4;
+}
+.project p {
+	max-width: 70ch;
+}
+
 .project {
-	margin: 1em;
-	display: grid;
+	padding: 1em 0;
+  display: grid;
+  height: 30vh;
+  overflow: visible;
+	position: relative;
+  transition: all 250ms;
+}
+
+.project > .metadata {
+		border-right: 1px solid black;
 }
 
 .project:hover{
 	cursor: pointer;
-	border: 1px solid red;
+	background-color: rgba(127,0,255,.7);
+	box-shadow: 0 0 15px 25px rgba(127,0,255,.7);
+	color: white;
 }
 
 .options {
-	margin:auto;
-	width: var(--width);
+	position: absolute;
+	z-index: 99;
+	width: 100%;
+	height: 100%;
 	display: grid;
+	/*background-color: pink;*/
 	grid-template-columns: repeat(5, 1fr);
-	grid-gap: calc((var(--width) - (5 * var(--block-width)))/4);
+	/*grid-gap: calc((var(--width) - (5 * var(--block-width)))/4);*/
 }
 
 .button {
-		width: var(--block-width);
-		height:var(--block-width);
-		border: 1px solid black;
+		width: 100%;
+		height: 100%;
+		border: 1px solid #eee2;
+		/*border: 1px solid black*/;
 }
+
 .hidden {
 	width: 100%;
 	opacity: 0;
 	pointer-events: none;
+  transition: all 300ms ease-out;
 }

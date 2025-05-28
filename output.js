@@ -29,6 +29,42 @@ html += `"]{
 html += i+1
 
 html += `) auto;
+
+		`
+if (false){
+html += `
+			height: `
+
+html += 4+i*4
+
+html += `rem;
+		`
+}
+html += `
+	}
+
+	.project[size="`
+
+html += i+1
+
+html += `"] .metadata h1{
+    font-size: `
+
+html +=  i >= 1 ? "2.4" : "1.4"
+
+html += `em;
+	}
+
+	.project[size="`
+
+html += i+1
+
+html += `"] .metadata p{
+    display: `
+
+html +=  i >= 2 ? "block" : "none"
+
+html += `;
 	}
 `
 }
@@ -36,32 +72,7 @@ html += `
 </style>
 
 <body>
-	`
-if (true) {
-html += `
-	<div class="options">
-		`
-for (const i of Array(5).keys()) {
-html += `
 
-			<div class="button" index="`
-
-html += i
-
-html += `" size="`
-
-html += i
-
-html += `"></div>
-
-		`
- } 
-html += `
-	`
-}
-html += `
-
-	</div>
 	<div class="websites-container">
 		`
  for (let website of websites) { 
@@ -71,11 +82,51 @@ html += `
 html += id()
 
 html += `">
-			<h1> `
+
+			<div class="options">
+				`
+for (const i of Array(5).keys()) {
+html += `
+					<div class="button" index="`
+
+html += 5-i
+
+html += `" size="`
+
+html += 5-i
+
+html += `"></div>
+				`
+ } 
+html += `
+			</div>
+
+			<div class="metadata">
+				<h1> `
 
 html +=  website.title 
 
 html += ` </h1>
+
+				`
+if (website.description) { 
+html += `
+					`
+for (const d of website.description.split("\n")) { 
+html += `
+						<p>`
+
+html += d
+
+html += `</p>
+					`
+ } 
+html += `
+				`
+ } 
+html += `
+			</div>
+
 			`
  if (website.type == "video") {
 html += `
@@ -99,6 +150,7 @@ html += `"> </img>
 			`
  } 
 html += `
+
 		</div>
 		`
  } 

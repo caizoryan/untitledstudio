@@ -1,4 +1,0 @@
-import fs from "fs"
-
-let dir = "./websites"
-export let websites = fs.readdirSync(dir)

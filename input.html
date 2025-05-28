@@ -14,25 +14,43 @@ function id() {
 %%for (const i of Array(5).keys()) {%%
 	.project[size="%%+i+1%%"]{
 		grid-template-columns: calc(var(--size) * %%+i+1%%) auto;
+		%%if (false){%%
+			height: %%+4+i*4%%rem;
+		%%}%%
+	}
+
+	.project[size="%%+i+1%%"] .metadata h1{
+    font-size: %%+ i >= 1 ? "2.4" : "1.4"%%em;
+	}
+
+	.project[size="%%+i+1%%"] .metadata p{
+    display: %%+ i >= 2 ? "block" : "none"%%;
 	}
 %%}%%
 </style>
 
 <body>
-	%%if (true) {%%
-	<div class="options">
-		%%for (const i of Array(5).keys()) {%%
 
-			<div class="button" index="%%+i%%" size="%%+i%%"></div>
-
-		%% } %%
-	%%}%%
-
-	</div>
 	<div class="websites-container">
 		%% for (let website of websites) { %%
 		<div class="project" size="2" id="%%+id()%%">
-			<h1> %%+ website.title %% </h1>
+
+			<div class="options">
+				%%for (const i of Array(5).keys()) {%%
+					<div class="button" index="%%+5-i%%" size="%%+5-i%%"></div>
+				%% } %%
+			</div>
+
+			<div class="metadata">
+				<h1> %%+ website.title %% </h1>
+
+				%%if (website.description) { %%
+					%%for (const d of website.description.split("\n")) { %%
+						<p>%%+d%%</p>
+					%% } %%
+				%% } %%
+			</div>
+
 			%% if (website.type == "video") {%%
 			<video class="hidden" src="%%+website.cover%%"> </img>
 			%% } %%
@@ -40,6 +58,7 @@ function id() {
 			%% if (website.type == "image") {%%
 			<img class="hidden" src="%%+website.cover%%"> </img>
 			%% } %%
+
 		</div>
 		%% } %%
 	<div>
