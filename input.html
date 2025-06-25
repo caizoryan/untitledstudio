@@ -2,8 +2,6 @@
 function id() {
 	return "id-" + Math.floor(Math.random() * Math.random() * 1000000)
 }
-
-let blocks = 8 
 %%
 <html>
 <head>
@@ -12,52 +10,15 @@ let blocks = 8
 </head>
 
 <style>
-	:root {
-		--blocks: %%+blocks%%;
-	}
-	
-%%for (const i of Array(blocks).keys()) {%%
-	.project[size="%%+i+1%%"]{
-		grid-template-columns: calc(var(--size) * %%+i+1%%) auto;
-		%%if (false){%% height: %%+4+i*4%%rem; %%}%%
-	}
-
-	.project[size="%%+i+1%%"] .metadata h1{
-    font-size: %%+ i >= 1 ? "2.4" : "1.4"%%em;
-	}
-
-	.project[size="%%+i+1%%"] .metadata p{
-    display: %%+ i >= 2 ? "block" : "none"%%;
-	}
-%%}%%
 </style>
 
 <body>
-	<div class="title-container">
-		<h1> 19A Studio </h1>
-	</div>
 
-	<div class="websites-container">
+
+	<div class="image-side full">
 		%% for (let website of websites) { %%
 		<a href="%%+website.link%%" target="_blank">
-		<div class="project" size="2" id="%%+id()%%">
-			<div class="options">
-				%%for (const i of Array(blocks).keys()) {%%
-					<!-- <div class="button" size="%%+blocks-i%%"></div>   -->
-					<div class="button" size="%%+i%%"></div>
-				%% } %%
-			</div>
-
-			<div class="metadata">
-				<h1> %%+ website.title %% </h1>
-
-				%%if (website.description) { %%
-					%%for (const d of website.description.split("\n")) { %%
-						<p>%%+d%%</p>
-					%% } %%
-				%% } %%
-			</div>
-
+		<div class="project" id="%%+id()%%">
 			%% if (website.type == "video") {%%
 				<video class="hidden" src="%%+website.cover%%"> </img>
 			%% } %%
@@ -69,7 +30,25 @@ let blocks = 8
 		</div>
 		</a>
 		%% } %%
-	<div>
+	</div>
+
+
+	<div class="metadata-side full">
+		%% for (let website of websites) { %%
+		<a href="%%+website.link%%" target="_blank">
+		<div class="project" id="%%+id()%%">
+			<div class="metadata">
+				<h1> %%+ website.title %% </h1>
+				%%if (website.description) { %%
+					%%for (const d of website.description.split("\n")) { %%
+						<p>%%+d%%</p>
+					%% } %%
+				%% } %%
+			</div>
+		</div>
+		</a>
+		%% } %%
+	</div>
 </body>
 
 <script src="./script.js"> </script>

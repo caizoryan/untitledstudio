@@ -38,22 +38,38 @@ a {
 	font-family: "dingdong";
 }
 
-.websites-container{
-	margin:auto;
-	width: var(--width);
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
+.full{
+	width: 100vw;
+	position: absolute;
+	top:0;
+	left: 0;
+	overflow-x: clip;
+	background: #eee;
+}
+
+.image-side {
+	background: #111;
 }
 
 .project {
-	padding: 1em 0;
+	padding: 1em;
 	margin: 1rem 0;
   display: grid;
-  height: 30vh;
+  height: 60vh;
+	width: 60vw;
   overflow: visible;
 	position: relative;
   transition: all 250ms;
+}
+
+
+.metadata-side .project{
+	max-width: 70ch;
+}
+
+.image-side .project{
+	margin-left: 35vw;
+	width: 65vw;
 }
 
 .button {
@@ -76,32 +92,14 @@ a {
 
 .project:hover{
 	cursor: pointer;
-	background-color: rgba(127,0,255,.7);
-	box-shadow: 0 0 15px 25px rgba(127,0,255,.7);
+	/* background-color: rgba(127,0,255,.7); */
+	/* box-shadow: 0 0 15px 25px rgba(127,0,255,.7); */
 	color: white;
-}
-
-.options {
-	position: absolute;
-	z-index: 99;
-	width: 100%;
-	height: 100%;
-	display: grid;
-	/*background-color: pink;*/
-	grid-template-columns: repeat(var(--blocks), 1fr);
-	/*grid-gap: calc((var(--width) - (var(--blocks) * var(--block-width)))/4);*/
-}
-
-.button {
-		width: 100%;
-		height: 100%;
-		border: 1px solid #eee2;
-		/*border: 1px solid black*/;
 }
 
 .hidden {
 	width: 100%;
-	opacity: 0;
+	opacity: 1;
 	pointer-events: none;
   transition: all 300ms ease-out;
 }
