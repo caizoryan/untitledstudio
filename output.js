@@ -1,6 +1,7 @@
 import fs from 'fs'
 import {websites, } from './import.js'
 let html = ""
+
 function id() {
 	return "id-" + Math.floor(Math.random() * Math.random() * 1000000)
 }
@@ -71,6 +72,11 @@ html += `
 		`
  for (let website of websites) { 
 html += `
+		<a href="`
+
+html += website.link
+
+html += `">
 		<div class="project" size="2" id="`
 
 html += id()
@@ -134,6 +140,7 @@ html += `"> </img>
  } 
 html += `
 		</div>
+		</a>
 		`
  } 
 html += `
