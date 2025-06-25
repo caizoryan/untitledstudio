@@ -28,7 +28,10 @@ body {
 	opacity: .4;
 }
 .project p {
-	max-width: 70ch;
+	max-width: calc(var(--size) * 2.5);
+  line-height: 1.2em;
+  margin-top: .5em;
+  font-weight: 600;
 }
 
 .project {

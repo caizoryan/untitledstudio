@@ -1,8 +1,6 @@
 import fs from 'fs'
 import {websites, } from './import.js'
 let html = ""
-html += ``
-
 function id() {
 	return "id-" + Math.floor(Math.random() * Math.random() * 1000000)
 }
@@ -29,16 +27,13 @@ html += `"]{
 html += i+1
 
 html += `) auto;
-
 		`
 if (false){
-html += `
-			height: `
+html += ` height: `
 
 html += 4+i*4
 
-html += `rem;
-		`
+html += `rem; `
 }
 html += `
 	}
@@ -72,7 +67,6 @@ html += `
 </style>
 
 <body>
-
 	<div class="websites-container">
 		`
  for (let website of websites) { 
@@ -82,7 +76,6 @@ html += `
 html += id()
 
 html += `">
-
 			<div class="options">
 				`
 for (const i of Array(5).keys()) {
@@ -109,10 +102,7 @@ html +=  website.title
 html += ` </h1>
 
 				`
-if (website.description) { 
-html += `
-					`
-for (const d of website.description.split("\n")) { 
+if (website.description) { for (const d of website.description.split("\n")) { 
 html += `
 						<p>`
 
@@ -120,17 +110,22 @@ html += d
 
 html += `</p>
 					`
- } 
-html += `
-				`
- } 
+ }  } 
 html += `
 			</div>
 
 			`
  if (website.type == "video") {
 html += `
-			<video class="hidden" src="`
+				<video class="hidden" src="`
+
+html += website.cover
+
+html += `"> </img>
+			`
+ }  if (website.type == "image") {
+html += `
+				<img class="hidden" src="`
 
 html += website.cover
 
@@ -138,19 +133,6 @@ html += `"> </img>
 			`
  } 
 html += `
-
-			`
- if (website.type == "image") {
-html += `
-			<img class="hidden" src="`
-
-html += website.cover
-
-html += `"> </img>
-			`
- } 
-html += `
-
 		</div>
 		`
  } 
@@ -161,5 +143,5 @@ html += `
 <script src="./script.js"> </script>
 </html>
 `
-console.log(html)
+
 fs.writeFileSync('./index.html', html);

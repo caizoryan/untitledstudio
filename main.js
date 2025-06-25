@@ -11,9 +11,7 @@
 	<img src="{%block.image.display.url%}"> </img>
 	{%}%}
  */
-
 import fs from "fs"
-
 
 //** struct
 /**
@@ -22,7 +20,6 @@ import fs from "fs"
  * @param {string} str
  * @returns {Token[]}
  */
-
 export function tokenize(str){
 		/**@type Token[]*/
 		let tokens = []
@@ -81,25 +78,27 @@ function create_token(type, value) {
  * @param {Token[]} tokens
  * @returns {string}
  */
-
 function generate_string(tokens, import_location, import_list) {
-		let list_str = ""
-		import_list.forEach((item) => list_str += item+", ")
-		let file = "import {"+list_str+"} from '" + import_location + "'\n"
+	let list_str = ""
+	import_list.forEach((item) => list_str += item+", ")
+	let file = "import {"+list_str+"} from '" + import_location + "'\n"
 
-		file += 'let html = ""' 
-		tokens.forEach((token) => {
-				if (token.type == "expression") file+=token.value
-				else if (token.type == "append") file +=  "\n" + "html += "+token.value +"\n"
-				else file +=  "\n" + "html += `" + token.value + "`\n" 
-		})
+	file += 'let html = ""' 
+	tokens.forEach((token) => {
+		if (token.type == "expression") file+=token.value
+		else if (token.type == "append") file +=  "\n" + "html += "+token.value +"\n"
+		else {
+			if (token.value.trim().length == 0) return
+			file +=  "\n" + "html += `" + token.value + "`\n" 
+		}
+	})
 
-		file += "console.log(html)"
+	//file += "console.log(html)"
 
-		return file
+	return file
 }
 
-function compile_file(input, output, htmlout, import_location ,imports){
+export function compile_file(input, output, htmlout, import_location ,imports){
 	let str = fs.readFileSync(input, {encoding: "utf-8"})
 	let tokens = tokenize(str)
 	let html = generate_string(tokens,import_location, imports)
@@ -108,13 +107,10 @@ function compile_file(input, output, htmlout, import_location ,imports){
 	fs.writeFileSync(output, html)
 }
 
-compile_file("./input.html", "./output.js", "./index.html", "./import.js", ["websites"])
-
 function ErrorKeyNotFound(value, pos) {
 		console.error("Key " + value + " not found in state at line: ", pos.line, "col: ", pos.col,)
 	throw Error()
 }
-
 function ErrorEndedInside(pos) {
 		console.error("Stream ended inside an expression block at line: ", pos.line, "col: ", pos.col, `./input.html:${pos.line}:${pos.col}`)
 	throw Error()
