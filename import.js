@@ -8,9 +8,15 @@ websites.map((website) => {
 		let cover = files.find((file) => file.includes("cover"))
 
 		let description = files.find((file) => file.includes("description"))
+		let link = files.find((file) => file.includes("link"))
 		if (description) {
 			let description_content = fs.readFileSync(dir + "/" + website.title + "/" + description, {encoding: "utf-8"})
 			website.description = description_content
+		}
+
+		if (link) {
+			let link_content = fs.readFileSync(dir + "/" + website.title + "/" + link, {encoding: "utf-8"})
+			website.link = link_content
 		}
 
 		if (cover){
