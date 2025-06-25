@@ -1,22 +1,30 @@
 import fs from 'fs'
 import {websites, } from './import.js'
 let html = ""
-
 function id() {
 	return "id-" + Math.floor(Math.random() * Math.random() * 1000000)
 }
 
+let blocks = 8 
 
 html += `
 <html>
 <head>
 	<link rel="stylesheet" href="./style.css">
-	<title>Untitled Studio</title>
+	<title>19A Studio</title>
 </head>
 
 <style>
+	:root {
+		--blocks: `
+
+html += blocks
+
+html += `;
+	}
+	
 `
-for (const i of Array(5).keys()) {
+for (const i of Array(blocks).keys()) {
 html += `
 	.project[size="`
 
@@ -68,6 +76,10 @@ html += `
 </style>
 
 <body>
+	<div class="title-container">
+		<h1> 19A Studio </h1>
+	</div>
+
 	<div class="websites-container">
 		`
  for (let website of websites) { 
@@ -76,7 +88,7 @@ html += `
 
 html += website.link
 
-html += `">
+html += `" target="_blank">
 		<div class="project" size="2" id="`
 
 html += id()
@@ -84,15 +96,16 @@ html += id()
 html += `">
 			<div class="options">
 				`
-for (const i of Array(5).keys()) {
+for (const i of Array(blocks).keys()) {
 html += `
-					<div class="button" index="`
+					<!-- <div class="button" size="`
 
-html += 5-i
+html += blocks-i
 
-html += `" size="`
+html += `"></div>   -->
+					<div class="button" size="`
 
-html += 5-i
+html += i
 
 html += `"></div>
 				`

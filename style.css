@@ -1,19 +1,41 @@
 :root{
 		--width: 90vw;
-		--block-width: 3rem;
-		--gap: calc((var(--width) - (5 * var(--block-width)))/4);
+		--block-width: 1rem;
+		--gap: calc((var(--width) - (var(--blocks) * var(--block-width)))/ var(--blocks));
 		--size: calc(var(--gap) + var(--block-width));
 }
 
+@font-face{
+	font-family: "dingdong";
+	src: url("./fonts/DINdong.otf");
+}
+
 * {
-		padding: 0;
-		margin: 0;
-		box-sizing: border-box;
-		font-family: sans-serif;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 body {
+	font-family: sans-serif;
 	background-color: rgba(255,255,120,.1);
+}
+
+a {
+	all: unset;
+	cursor: pointer;
+}
+
+.title-container {
+	margin: auto;
+  width: var(--width);
+	padding: 1rem 0;
+	height: 60vh;
+}
+
+.title-container h1 {
+	font-size: 8rem;
+	font-family: "dingdong";
 }
 
 .websites-container{
@@ -24,18 +46,9 @@ body {
 	flex-direction: column;
 }
 
-.project h1 {
-	opacity: .4;
-}
-.project p {
-	max-width: calc(var(--size) * 2.5);
-  line-height: 1.2em;
-  margin-top: .5em;
-  font-weight: 600;
-}
-
 .project {
 	padding: 1em 0;
+	margin: 1rem 0;
   display: grid;
   height: 30vh;
   overflow: visible;
@@ -43,8 +56,22 @@ body {
   transition: all 250ms;
 }
 
+.button {
+	opacity: 0;
+}
+
+.project h1 {
+	opacity: .4;
+}
+.project p {
+	max-width: calc(var(--size) * var(--blocks) / 2);
+  line-height: 1.2em;
+  margin-top: .5em;
+  font-weight: 600;
+}
+
 .project > .metadata {
-		border-right: 1px solid black;
+		border-right: 1px solid #0002;
 }
 
 .project:hover{
@@ -61,8 +88,8 @@ body {
 	height: 100%;
 	display: grid;
 	/*background-color: pink;*/
-	grid-template-columns: repeat(5, 1fr);
-	/*grid-gap: calc((var(--width) - (5 * var(--block-width)))/4);*/
+	grid-template-columns: repeat(var(--blocks), 1fr);
+	/*grid-gap: calc((var(--width) - (var(--blocks) * var(--block-width)))/4);*/
 }
 
 .button {

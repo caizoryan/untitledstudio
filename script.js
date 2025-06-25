@@ -11,8 +11,8 @@ function init(){
 
 function button_click(button) {
 	if (
-			button.getAttribute("size") === "0" ||
-			button.getAttribute("size") === "5"
+			button.getAttribute("size") === "0" 
+			// button.getAttribute("size") === "5" // 
 	) return
 
 	button.onmouseenter = () =>
