@@ -7,10 +7,10 @@ edit input.html
 run:
 
 ```js
-node run.js
+node watch.js
 ```
 
-This will produce index.html, this is the website to be used and hosted. Variables can be edited in import.js. The website's interactivity is in script.js. Refer below for the syntax in input.html
+This will start a watch for any changes on input.html, script.js or import.js. On any change it will produce index.html, this is the website to be used and hosted. Variables can be edited in import.js. The website's interactivity is in script.js. Refer below for the syntax in input.html
 
 
 ### Overview

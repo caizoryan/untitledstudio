@@ -1,18 +1,22 @@
 %%
-
 function id() {
 	return "id-" + Math.floor(Math.random() * Math.random() * 1000000)
 }
 
+let blocks = 8 
 %%
 <html>
 <head>
 	<link rel="stylesheet" href="./style.css">
-	<title>Untitled Studio</title>
+	<title>19A Studio</title>
 </head>
 
 <style>
-%%for (const i of Array(5).keys()) {%%
+	:root {
+		--blocks: %%+blocks%%;
+	}
+	
+%%for (const i of Array(blocks).keys()) {%%
 	.project[size="%%+i+1%%"]{
 		grid-template-columns: calc(var(--size) * %%+i+1%%) auto;
 		%%if (false){%% height: %%+4+i*4%%rem; %%}%%
@@ -22,20 +26,30 @@ function id() {
     font-size: %%+ i >= 1 ? "2.4" : "1.4"%%em;
 	}
 
-	.project[size="%%+i+1%%"] .metadata p{
-    display: %%+ i >= 2 ? "block" : "none"%%;
+	.project[size="%%+i+1%%"] .metadata p[level="0"]{
+    display: %%+ i > 1 ? "block" : "none"%%;
 	}
+
+	.project[size="%%+i+1%%"] .metadata p[level="1"]{
+    display: %%+ i > 3 ? "block" : "none"%%;
+	}
+
 %%}%%
 </style>
 
 <body>
+	<div class="title-container">
+		<h1> 19A Studio </h1>
+	</div>
+
 	<div class="websites-container">
 		%% for (let website of websites) { %%
-		<a href="%%+website.link%%">
+		<a href="%%+website.link%%" target="_blank">
 		<div class="project" size="2" id="%%+id()%%">
 			<div class="options">
-				%%for (const i of Array(5).keys()) {%%
-					<div class="button" index="%%+5-i%%" size="%%+5-i%%"></div>
+				%%for (const i of Array(blocks).keys()) {%%
+					<!-- <div class="button" size="%%+blocks-i%%"></div>   -->
+					<div class="button" size="%%+i%%"></div>
 				%% } %%
 			</div>
 
@@ -43,9 +57,9 @@ function id() {
 				<h1> %%+ website.title %% </h1>
 
 				%%if (website.description) { %%
-					%%for (const d of website.description.split("\n")) { %%
-						<p>%%+d%%</p>
-					%% } %%
+					%% website.description.forEach((d, i) => { %%
+						<p level=%%+i%%>%%+d%%</p>
+					%% }) %%
 				%% } %%
 			</div>
 
@@ -60,7 +74,11 @@ function id() {
 		</div>
 		</a>
 		%% } %%
-	<div>
+	</div>
+
+	<div class="title-container end">
+		<h1> 19A Studio </h1>
+	</div>
 </body>
 
 <script src="./script.js"> </script>

@@ -11,7 +11,7 @@ websites.map((website) => {
 		let link = files.find((file) => file.includes("link"))
 		if (description) {
 			let description_content = fs.readFileSync(dir + "/" + website.title + "/" + description, {encoding: "utf-8"})
-			website.description = description_content
+			website.description = description_content.split("---")
 		}
 
 		if (link) {

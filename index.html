@@ -2,10 +2,14 @@
 <html>
 <head>
 	<link rel="stylesheet" href="./style.css">
-	<title>Untitled Studio</title>
+	<title>19A Studio</title>
 </head>
 
 <style>
+	:root {
+		--blocks: 8;
+	}
+	
 
 	.project[size="1"]{
 		grid-template-columns: calc(var(--size) * 1) auto;
@@ -16,9 +20,14 @@
     font-size: 1.4em;
 	}
 
-	.project[size="1"] .metadata p{
+	.project[size="1"] .metadata p[level="0"]{
     display: none;
 	}
+
+	.project[size="1"] .metadata p[level="1"]{
+    display: none;
+	}
+
 
 	.project[size="2"]{
 		grid-template-columns: calc(var(--size) * 2) auto;
@@ -29,9 +38,14 @@
     font-size: 2.4em;
 	}
 
-	.project[size="2"] .metadata p{
+	.project[size="2"] .metadata p[level="0"]{
     display: none;
 	}
+
+	.project[size="2"] .metadata p[level="1"]{
+    display: none;
+	}
+
 
 	.project[size="3"]{
 		grid-template-columns: calc(var(--size) * 3) auto;
@@ -42,9 +56,14 @@
     font-size: 2.4em;
 	}
 
-	.project[size="3"] .metadata p{
+	.project[size="3"] .metadata p[level="0"]{
     display: block;
 	}
+
+	.project[size="3"] .metadata p[level="1"]{
+    display: none;
+	}
+
 
 	.project[size="4"]{
 		grid-template-columns: calc(var(--size) * 4) auto;
@@ -55,9 +74,14 @@
     font-size: 2.4em;
 	}
 
-	.project[size="4"] .metadata p{
+	.project[size="4"] .metadata p[level="0"]{
     display: block;
 	}
+
+	.project[size="4"] .metadata p[level="1"]{
+    display: none;
+	}
+
 
 	.project[size="5"]{
 		grid-template-columns: calc(var(--size) * 5) auto;
@@ -68,29 +92,106 @@
     font-size: 2.4em;
 	}
 
-	.project[size="5"] .metadata p{
+	.project[size="5"] .metadata p[level="0"]{
     display: block;
 	}
+
+	.project[size="5"] .metadata p[level="1"]{
+    display: block;
+	}
+
+
+	.project[size="6"]{
+		grid-template-columns: calc(var(--size) * 6) auto;
+		
+	}
+
+	.project[size="6"] .metadata h1{
+    font-size: 2.4em;
+	}
+
+	.project[size="6"] .metadata p[level="0"]{
+    display: block;
+	}
+
+	.project[size="6"] .metadata p[level="1"]{
+    display: block;
+	}
+
+
+	.project[size="7"]{
+		grid-template-columns: calc(var(--size) * 7) auto;
+		
+	}
+
+	.project[size="7"] .metadata h1{
+    font-size: 2.4em;
+	}
+
+	.project[size="7"] .metadata p[level="0"]{
+    display: block;
+	}
+
+	.project[size="7"] .metadata p[level="1"]{
+    display: block;
+	}
+
+
+	.project[size="8"]{
+		grid-template-columns: calc(var(--size) * 8) auto;
+		
+	}
+
+	.project[size="8"] .metadata h1{
+    font-size: 2.4em;
+	}
+
+	.project[size="8"] .metadata p[level="0"]{
+    display: block;
+	}
+
+	.project[size="8"] .metadata p[level="1"]{
+    display: block;
+	}
+
 
 </style>
 
 <body>
+	<div class="title-container">
+		<h1> 19A Studio </h1>
+	</div>
+
 	<div class="websites-container">
 		
 		<a href="https://films.100m.studio/
-">
-		<div class="project" size="2" id="id-675206">
+" target="_blank">
+		<div class="project" size="2" id="id-10479">
 			<div class="options">
 				
-					<div class="button" index="5" size="5"></div>
+					<!-- <div class="button" size="8"></div>   -->
+					<div class="button" size="0"></div>
 				
-					<div class="button" index="4" size="4"></div>
+					<!-- <div class="button" size="7"></div>   -->
+					<div class="button" size="1"></div>
 				
-					<div class="button" index="3" size="3"></div>
+					<!-- <div class="button" size="6"></div>   -->
+					<div class="button" size="2"></div>
 				
-					<div class="button" index="2" size="2"></div>
+					<!-- <div class="button" size="5"></div>   -->
+					<div class="button" size="3"></div>
 				
-					<div class="button" index="1" size="1"></div>
+					<!-- <div class="button" size="4"></div>   -->
+					<div class="button" size="4"></div>
+				
+					<!-- <div class="button" size="3"></div>   -->
+					<div class="button" size="5"></div>
+				
+					<!-- <div class="button" size="2"></div>   -->
+					<div class="button" size="6"></div>
+				
+					<!-- <div class="button" size="1"></div>   -->
+					<div class="button" size="7"></div>
 				
 			</div>
 
@@ -107,19 +208,33 @@
 		</a>
 		
 		<a href="https://alt.100m.studio/
-">
-		<div class="project" size="2" id="id-415946">
+" target="_blank">
+		<div class="project" size="2" id="id-120225">
 			<div class="options">
 				
-					<div class="button" index="5" size="5"></div>
+					<!-- <div class="button" size="8"></div>   -->
+					<div class="button" size="0"></div>
 				
-					<div class="button" index="4" size="4"></div>
+					<!-- <div class="button" size="7"></div>   -->
+					<div class="button" size="1"></div>
 				
-					<div class="button" index="3" size="3"></div>
+					<!-- <div class="button" size="6"></div>   -->
+					<div class="button" size="2"></div>
 				
-					<div class="button" index="2" size="2"></div>
+					<!-- <div class="button" size="5"></div>   -->
+					<div class="button" size="3"></div>
 				
-					<div class="button" index="1" size="1"></div>
+					<!-- <div class="button" size="4"></div>   -->
+					<div class="button" size="4"></div>
+				
+					<!-- <div class="button" size="3"></div>   -->
+					<div class="button" size="5"></div>
+				
+					<!-- <div class="button" size="2"></div>   -->
+					<div class="button" size="6"></div>
+				
+					<!-- <div class="button" size="1"></div>   -->
+					<div class="button" size="7"></div>
 				
 			</div>
 
@@ -136,19 +251,33 @@
 		</a>
 		
 		<a href="https://2025.ocadu.gd/
-">
-		<div class="project" size="2" id="id-175636">
+" target="_blank">
+		<div class="project" size="2" id="id-118186">
 			<div class="options">
 				
-					<div class="button" index="5" size="5"></div>
+					<!-- <div class="button" size="8"></div>   -->
+					<div class="button" size="0"></div>
 				
-					<div class="button" index="4" size="4"></div>
+					<!-- <div class="button" size="7"></div>   -->
+					<div class="button" size="1"></div>
 				
-					<div class="button" index="3" size="3"></div>
+					<!-- <div class="button" size="6"></div>   -->
+					<div class="button" size="2"></div>
 				
-					<div class="button" index="2" size="2"></div>
+					<!-- <div class="button" size="5"></div>   -->
+					<div class="button" size="3"></div>
 				
-					<div class="button" index="1" size="1"></div>
+					<!-- <div class="button" size="4"></div>   -->
+					<div class="button" size="4"></div>
+				
+					<!-- <div class="button" size="3"></div>   -->
+					<div class="button" size="5"></div>
+				
+					<!-- <div class="button" size="2"></div>   -->
+					<div class="button" size="6"></div>
+				
+					<!-- <div class="button" size="1"></div>   -->
+					<div class="button" size="7"></div>
 				
 			</div>
 
@@ -165,19 +294,33 @@
 		</a>
 		
 		<a href="https://pascal-is-waging.github.io/Landlords/
-">
-		<div class="project" size="2" id="id-311369">
+" target="_blank">
+		<div class="project" size="2" id="id-446183">
 			<div class="options">
 				
-					<div class="button" index="5" size="5"></div>
+					<!-- <div class="button" size="8"></div>   -->
+					<div class="button" size="0"></div>
 				
-					<div class="button" index="4" size="4"></div>
+					<!-- <div class="button" size="7"></div>   -->
+					<div class="button" size="1"></div>
 				
-					<div class="button" index="3" size="3"></div>
+					<!-- <div class="button" size="6"></div>   -->
+					<div class="button" size="2"></div>
 				
-					<div class="button" index="2" size="2"></div>
+					<!-- <div class="button" size="5"></div>   -->
+					<div class="button" size="3"></div>
 				
-					<div class="button" index="1" size="1"></div>
+					<!-- <div class="button" size="4"></div>   -->
+					<div class="button" size="4"></div>
+				
+					<!-- <div class="button" size="3"></div>   -->
+					<div class="button" size="5"></div>
+				
+					<!-- <div class="button" size="2"></div>   -->
+					<div class="button" size="6"></div>
+				
+					<!-- <div class="button" size="1"></div>   -->
+					<div class="button" size="7"></div>
 				
 			</div>
 
@@ -185,11 +328,12 @@
 				<h1> Internet Landlords  </h1>
 
 				
-						<p>Who owns the internet? Who runs the massive infrastructure that bestows our conveniences? </p>
+						<p level=0>Who owns the internet? Who runs the massive infrastructure that bestows our conveniences? 
+</p>
 					
-						<p>This website is the result of a comprehensive research around the history and the formation of clouds, data center and internet landlords. Designed and developed in collaboration with Aaryan Pashine, this website documents the research materials and the notes in addition to a narrative that unfolds throughout the scroll to unravel the outcomes.</p>
-					
-						<p></p>
+						<p level=1>
+This website is the result of a comprehensive research around the history and the formation of clouds, data center and internet landlords. Designed and developed in collaboration with Aaryan Pashine, this website documents the research materials and the notes in addition to a narrative that unfolds throughout the scroll to unravel the outcomes.
+</p>
 					
 			</div>
 
@@ -200,19 +344,33 @@
 		</a>
 		
 		<a href="https://salankarpashine.in
-">
-		<div class="project" size="2" id="id-274752">
+" target="_blank">
+		<div class="project" size="2" id="id-461016">
 			<div class="options">
 				
-					<div class="button" index="5" size="5"></div>
+					<!-- <div class="button" size="8"></div>   -->
+					<div class="button" size="0"></div>
 				
-					<div class="button" index="4" size="4"></div>
+					<!-- <div class="button" size="7"></div>   -->
+					<div class="button" size="1"></div>
 				
-					<div class="button" index="3" size="3"></div>
+					<!-- <div class="button" size="6"></div>   -->
+					<div class="button" size="2"></div>
 				
-					<div class="button" index="2" size="2"></div>
+					<!-- <div class="button" size="5"></div>   -->
+					<div class="button" size="3"></div>
 				
-					<div class="button" index="1" size="1"></div>
+					<!-- <div class="button" size="4"></div>   -->
+					<div class="button" size="4"></div>
+				
+					<!-- <div class="button" size="3"></div>   -->
+					<div class="button" size="5"></div>
+				
+					<!-- <div class="button" size="2"></div>   -->
+					<div class="button" size="6"></div>
+				
+					<!-- <div class="button" size="1"></div>   -->
+					<div class="button" size="7"></div>
 				
 			</div>
 
@@ -228,7 +386,11 @@
 		</div>
 		</a>
 		
-	<div>
+	</div>
+
+	<div class="title-container end">
+		<h1> 19A Studio </h1>
+	</div>
 </body>
 
 <script src="./script.js"> </script>
