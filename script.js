@@ -1,5 +1,40 @@
 let projects
 let buttons
+let observer
+
+function dhamaka(not){
+	let top = document.querySelector(".title-container")
+	top.remove()
+
+  let copy = document.querySelector(".websites-container")
+	copy.remove()
+	setTimeout(() => {
+		document.body.appendChild(copy)
+	}, 50)
+
+	setTimeout(() => {
+		document.body.appendChild(top)
+
+		refreshObserver()
+
+		setTimeout(() => {
+			not.classList.remove("end")
+			top.classList.add("end")
+			initObserver()
+		}, 30)
+	}, 100)
+
+
+
+	// TODO also add one at the end
+}
+
+function initObserver(){
+	observer.observe(document.querySelector(".end"))
+}
+function refreshObserver(){
+	observer.unobserve(document.querySelector(".end"))
+}
 
 function init(){
 	projects = document.querySelectorAll(".project")
@@ -7,6 +42,18 @@ function init(){
 
 	buttons = document.querySelectorAll(".options .button")
 	buttons.forEach(button_click)
+
+	const options = {threshold: 1};
+	
+	observer = new IntersectionObserver(entries => {
+		entries.forEach(entry => {
+			if(entry.isIntersecting){
+				dhamaka(entry.target)
+			}
+		})
+	}, options)
+	initObserver()
+
 }
 
 function button_click(button) {
@@ -34,5 +81,6 @@ function add_listeners(element){
 		if (image.pause) image.pause()
 	}
 }
+
 
 init()

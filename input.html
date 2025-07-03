@@ -26,9 +26,14 @@ let blocks = 8
     font-size: %%+ i >= 1 ? "2.4" : "1.4"%%em;
 	}
 
-	.project[size="%%+i+1%%"] .metadata p{
-    display: %%+ i >= 2 ? "block" : "none"%%;
+	.project[size="%%+i+1%%"] .metadata p[level="0"]{
+    display: %%+ i > 1 ? "block" : "none"%%;
 	}
+
+	.project[size="%%+i+1%%"] .metadata p[level="1"]{
+    display: %%+ i > 3 ? "block" : "none"%%;
+	}
+
 %%}%%
 </style>
 
@@ -52,9 +57,9 @@ let blocks = 8
 				<h1> %%+ website.title %% </h1>
 
 				%%if (website.description) { %%
-					%%for (const d of website.description.split("\n")) { %%
-						<p>%%+d%%</p>
-					%% } %%
+					%% website.description.forEach((d, i) => { %%
+						<p level=%%+i%%>%%+d%%</p>
+					%% }) %%
 				%% } %%
 			</div>
 
@@ -69,7 +74,11 @@ let blocks = 8
 		</div>
 		</a>
 		%% } %%
-	<div>
+	</div>
+
+	<div class="title-container end">
+		<h1> 19A Studio </h1>
+	</div>
 </body>
 
 <script src="./script.js"> </script>

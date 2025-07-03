@@ -20,9 +20,14 @@
     font-size: 1.4em;
 	}
 
-	.project[size="1"] .metadata p{
+	.project[size="1"] .metadata p[level="0"]{
     display: none;
 	}
+
+	.project[size="1"] .metadata p[level="1"]{
+    display: none;
+	}
+
 
 	.project[size="2"]{
 		grid-template-columns: calc(var(--size) * 2) auto;
@@ -33,9 +38,14 @@
     font-size: 2.4em;
 	}
 
-	.project[size="2"] .metadata p{
+	.project[size="2"] .metadata p[level="0"]{
     display: none;
 	}
+
+	.project[size="2"] .metadata p[level="1"]{
+    display: none;
+	}
+
 
 	.project[size="3"]{
 		grid-template-columns: calc(var(--size) * 3) auto;
@@ -46,9 +56,14 @@
     font-size: 2.4em;
 	}
 
-	.project[size="3"] .metadata p{
+	.project[size="3"] .metadata p[level="0"]{
     display: block;
 	}
+
+	.project[size="3"] .metadata p[level="1"]{
+    display: none;
+	}
+
 
 	.project[size="4"]{
 		grid-template-columns: calc(var(--size) * 4) auto;
@@ -59,9 +74,14 @@
     font-size: 2.4em;
 	}
 
-	.project[size="4"] .metadata p{
+	.project[size="4"] .metadata p[level="0"]{
     display: block;
 	}
+
+	.project[size="4"] .metadata p[level="1"]{
+    display: none;
+	}
+
 
 	.project[size="5"]{
 		grid-template-columns: calc(var(--size) * 5) auto;
@@ -72,9 +92,14 @@
     font-size: 2.4em;
 	}
 
-	.project[size="5"] .metadata p{
+	.project[size="5"] .metadata p[level="0"]{
     display: block;
 	}
+
+	.project[size="5"] .metadata p[level="1"]{
+    display: block;
+	}
+
 
 	.project[size="6"]{
 		grid-template-columns: calc(var(--size) * 6) auto;
@@ -85,9 +110,14 @@
     font-size: 2.4em;
 	}
 
-	.project[size="6"] .metadata p{
+	.project[size="6"] .metadata p[level="0"]{
     display: block;
 	}
+
+	.project[size="6"] .metadata p[level="1"]{
+    display: block;
+	}
+
 
 	.project[size="7"]{
 		grid-template-columns: calc(var(--size) * 7) auto;
@@ -98,9 +128,14 @@
     font-size: 2.4em;
 	}
 
-	.project[size="7"] .metadata p{
+	.project[size="7"] .metadata p[level="0"]{
     display: block;
 	}
+
+	.project[size="7"] .metadata p[level="1"]{
+    display: block;
+	}
+
 
 	.project[size="8"]{
 		grid-template-columns: calc(var(--size) * 8) auto;
@@ -111,9 +146,14 @@
     font-size: 2.4em;
 	}
 
-	.project[size="8"] .metadata p{
+	.project[size="8"] .metadata p[level="0"]{
     display: block;
 	}
+
+	.project[size="8"] .metadata p[level="1"]{
+    display: block;
+	}
+
 
 </style>
 
@@ -126,7 +166,7 @@
 		
 		<a href="https://films.100m.studio/
 " target="_blank">
-		<div class="project" size="2" id="id-687475">
+		<div class="project" size="2" id="id-8360">
 			<div class="options">
 				
 					<!-- <div class="button" size="8"></div>   -->
@@ -169,7 +209,7 @@
 		
 		<a href="https://alt.100m.studio/
 " target="_blank">
-		<div class="project" size="2" id="id-87942">
+		<div class="project" size="2" id="id-398202">
 			<div class="options">
 				
 					<!-- <div class="button" size="8"></div>   -->
@@ -212,7 +252,7 @@
 		
 		<a href="https://2025.ocadu.gd/
 " target="_blank">
-		<div class="project" size="2" id="id-649763">
+		<div class="project" size="2" id="id-24832">
 			<div class="options">
 				
 					<!-- <div class="button" size="8"></div>   -->
@@ -255,7 +295,7 @@
 		
 		<a href="https://pascal-is-waging.github.io/Landlords/
 " target="_blank">
-		<div class="project" size="2" id="id-23014">
+		<div class="project" size="2" id="id-456185">
 			<div class="options">
 				
 					<!-- <div class="button" size="8"></div>   -->
@@ -288,11 +328,12 @@
 				<h1> Internet Landlords  </h1>
 
 				
-						<p>Who owns the internet? Who runs the massive infrastructure that bestows our conveniences? </p>
+						<p level=0>Who owns the internet? Who runs the massive infrastructure that bestows our conveniences? 
+</p>
 					
-						<p>This website is the result of a comprehensive research around the history and the formation of clouds, data center and internet landlords. Designed and developed in collaboration with Aaryan Pashine, this website documents the research materials and the notes in addition to a narrative that unfolds throughout the scroll to unravel the outcomes.</p>
-					
-						<p></p>
+						<p level=1>
+This website is the result of a comprehensive research around the history and the formation of clouds, data center and internet landlords. Designed and developed in collaboration with Aaryan Pashine, this website documents the research materials and the notes in addition to a narrative that unfolds throughout the scroll to unravel the outcomes.
+</p>
 					
 			</div>
 
@@ -304,7 +345,7 @@
 		
 		<a href="https://salankarpashine.in
 " target="_blank">
-		<div class="project" size="2" id="id-53610">
+		<div class="project" size="2" id="id-26883">
 			<div class="options">
 				
 					<!-- <div class="button" size="8"></div>   -->
@@ -345,7 +386,11 @@
 		</div>
 		</a>
 		
-	<div>
+	</div>
+
+	<div class="title-container end">
+		<h1> 19A Studio </h1>
+	</div>
 </body>
 
 <script src="./script.js"> </script>

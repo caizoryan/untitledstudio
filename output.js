@@ -63,13 +63,26 @@ html += `em;
 
 html += i+1
 
-html += `"] .metadata p{
+html += `"] .metadata p[level="0"]{
     display: `
 
-html +=  i >= 2 ? "block" : "none"
+html +=  i > 1 ? "block" : "none"
 
 html += `;
 	}
+
+	.project[size="`
+
+html += i+1
+
+html += `"] .metadata p[level="1"]{
+    display: `
+
+html +=  i > 3 ? "block" : "none"
+
+html += `;
+	}
+
 `
 }
 html += `
@@ -121,15 +134,19 @@ html +=  website.title
 html += ` </h1>
 
 				`
-if (website.description) { for (const d of website.description.split("\n")) { 
+if (website.description) {  website.description.forEach((d, i) => { 
 html += `
-						<p>`
+						<p level=`
+
+html += i
+
+html += `>`
 
 html += d
 
 html += `</p>
 					`
- }  } 
+ })  } 
 html += `
 			</div>
 
@@ -157,7 +174,11 @@ html += `
 		`
  } 
 html += `
-	<div>
+	</div>
+
+	<div class="title-container end">
+		<h1> 19A Studio </h1>
+	</div>
 </body>
 
 <script src="./script.js"> </script>
