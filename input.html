@@ -7,8 +7,10 @@ let blocks = 8
 %%
 <html>
 <head>
-	<link rel="stylesheet" href="./style.css">
 	<title>19A Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="./style.css">
 </head>
 
 <style>
@@ -64,7 +66,7 @@ let blocks = 8
 			</div>
 
 			%% if (website.type == "video") {%%
-				<video class="hidden" src="%%+website.cover%%"> </img>
+				<video class="hidden" src="%%+website.cover%%"> </video>
 			%% } %%
 
 

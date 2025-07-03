@@ -10,8 +10,10 @@ let blocks = 8
 html += `
 <html>
 <head>
-	<link rel="stylesheet" href="./style.css">
 	<title>19A Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="./style.css">
 </head>
 
 <style>
@@ -157,7 +159,7 @@ html += `
 
 html += website.cover
 
-html += `"> </img>
+html += `"> </video>
 			`
  }  if (website.type == "image") {
 html += `
