@@ -51,7 +51,7 @@ html += `
 
 	.project[size="`
 
-html += i+1
+html += i
 
 html += `"] .metadata h1{
     font-size: `
@@ -61,32 +61,26 @@ html +=  i >= 1 ? "2.4" : "1.4"
 html += `em;
 	}
 
-	.project[size="`
+	`
+for (const f of Array(blocks).keys()) {
+html += `
+		.project[size="`
 
-html += i+1
+html += i
 
-html += `"] .metadata p[level="0"]{
-    display: `
+html += `"] .metadata *[level="`
 
-html +=  i > 1 ? "block" : "none"
+html += f
 
-html += `;
-	}
+html += `"]{
+			opacity: `
 
-	.project[size="`
-
-html += i+1
-
-html += `"] .metadata p[level="1"]{
-    display: `
-
-html +=  i > 3 ? "block" : "none"
+html +=  i > f+1 ? 1:0
 
 html += `;
-	}
-
-`
-}
+		}
+	`
+}}
 html += `
 </style>
 
@@ -99,11 +93,6 @@ html += `
 		`
  for (let website of websites) { 
 html += `
-		<a href="`
-
-html += website.link
-
-html += `" target="_blank">
 		<div class="project" size="2" id="`
 
 html += id()
@@ -120,7 +109,7 @@ html += blocks-i
 html += `"></div>   -->
 					<div class="button" size="`
 
-html += i
+html += blocks-i
 
 html += `"></div>
 				`
@@ -135,12 +124,13 @@ html +=  website.title
 
 html += ` </h1>
 
+
 				`
 if (website.description) {  website.description.forEach((d, i) => { 
 html += `
 						<p level=`
 
-html += i
+html += i+1
 
 html += `>`
 
@@ -148,7 +138,21 @@ html += d
 
 html += `</p>
 					`
- })  } 
+ })  } if (website.link) { 
+html += `
+					<a level=5 href="`
+
+html += website.link
+
+html += `" target="_blank">
+						<p >`
+
+html += website.link
+
+html += `</p></a>
+					</a>
+				`
+ } 
 html += `
 			</div>
 
@@ -172,7 +176,6 @@ html += `"> </img>
  } 
 html += `
 		</div>
-		</a>
 		`
  } 
 html += `

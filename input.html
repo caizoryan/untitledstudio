@@ -24,17 +24,15 @@ let blocks = 8
 		%%if (false){%% height: %%+4+i*4%%rem; %%}%%
 	}
 
-	.project[size="%%+i+1%%"] .metadata h1{
+	.project[size="%%+i%%"] .metadata h1{
     font-size: %%+ i >= 1 ? "2.4" : "1.4"%%em;
 	}
 
-	.project[size="%%+i+1%%"] .metadata p[level="0"]{
-    display: %%+ i > 1 ? "block" : "none"%%;
-	}
-
-	.project[size="%%+i+1%%"] .metadata p[level="1"]{
-    display: %%+ i > 3 ? "block" : "none"%%;
-	}
+	%%for (const f of Array(blocks).keys()) {%%
+		.project[size="%%+i%%"] .metadata *[level="%%+f%%"]{
+			opacity: %%+ i > f+1 ? 1:0%%;
+		}
+	%%}%%
 
 %%}%%
 </style>
@@ -46,22 +44,29 @@ let blocks = 8
 
 	<div class="websites-container">
 		%% for (let website of websites) { %%
-		<a href="%%+website.link%%" target="_blank">
 		<div class="project" size="2" id="%%+id()%%">
 			<div class="options">
 				%%for (const i of Array(blocks).keys()) {%%
 					<!-- <div class="button" size="%%+blocks-i%%"></div>   -->
-					<div class="button" size="%%+i%%"></div>
+					<div class="button" size="%%+blocks-i%%"></div>
 				%% } %%
 			</div>
 
 			<div class="metadata">
 				<h1> %%+ website.title %% </h1>
 
+
 				%%if (website.description) { %%
 					%% website.description.forEach((d, i) => { %%
-						<p level=%%+i%%>%%+d%%</p>
+						<p level=%%+i+1%%>%%+d%%</p>
 					%% }) %%
+				%% } %%
+
+
+				%%if (website.link) { %%
+					<a level=5 href="%%+website.link%%" target="_blank">
+						<p >%%+website.link%%</p></a>
+					</a>
 				%% } %%
 			</div>
 
@@ -74,7 +79,6 @@ let blocks = 8
 				<img class="hidden" src="%%+website.cover%%"> </img>
 			%% } %%
 		</div>
-		</a>
 		%% } %%
 	</div>
 
