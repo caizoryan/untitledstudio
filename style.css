@@ -1,13 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Roboto:ital@0;1&display=swap');
+
 :root{
 		--width: 90vw;
 		--block-width: 1rem;
 		--gap: calc((var(--width) - (var(--blocks) * var(--block-width)))/ var(--blocks));
 		--size: calc(var(--gap) + var(--block-width));
+		--primary: rgba(127,0,255,.7);
+		--highlight: rgb(255, 145, 50);
+		--light-primary: rgba(227,215,215);
+		--background: #eee;
 }
+
 
 @font-face{
 	font-family: "dingdong";
 	src: url("./fonts/DINdong.otf");
+}
+
+@font-face{
+	font-family: "haskoy";
+	src: url("./fonts/Haskoy.ttf");
+}
+
+a {
+	all: unset;
+	cursor: pointer;
+	transition: all 300ms;
 }
 
 * {
@@ -18,20 +36,78 @@
 }
 
 body {
-	font-family: sans-serif;
-	background-color: rgba(255,255,120,.1);
+	font-family: "haskoy", sans-serif;
+	background-color: var(--background);
+	--size-1: 10%;
+	--size-2: 95%;
+
+	background:
+		radial-gradient(circle, transparent var(--size-1), var(--background) var(--size-1), var(--background) var(--size-2), transparent var(--size-2), transparent),
+		radial-gradient(circle, transparent var(--size-1), var(--background) var(--size-1), var(--background) var(--size-2), transparent var(--size-2), transparent)
+										25px 25px, linear-gradient(var(--light-primary) 2px, transparent 2px)
+										0 -1px, linear-gradient(90deg, var(--light-primary) 2px, var(--background) 2px) -1px 0;
+
+	background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
 }
 
-a {
-	all: unset;
-	cursor: pointer;
-}
 
 .title-container {
 	margin: auto;
   width: var(--width);
-	padding: 1rem 0;
+	padding: 1rem 0 1rem 0;
 	height: 60vh;
+	margin-bottom: 1em;
+	border-bottom: 2px dotted var(--light-primary);
+	/* background-color: var(--background); */
+	opacity: 0.8;
+}
+
+@media only screen and (max-width: 800px) {
+	.title-container {
+		height: auto;
+	}
+}
+
+.title-container p{
+	max-width: 70ch;
+	line-height: 1.3em;
+	/* margin-bottom: .7em; */
+	font-weight: 600;
+	color: var(--primary);
+	padding: 1em;
+	/* border: .5px solid var(--light-primary); */
+	border-left: 1.5px solid var(--light-primary);
+}
+
+.title-container h1 {
+	padding: 2rem 0;
+	border-bottom: 1.5px solid var(--light-primary);
+}
+.title-container p:nth-of-type(1) {
+	margin-left: calc(3* var(--size));
+}
+
+.title-container p:nth-of-type(2) {
+	margin-left: calc(2* var(--size));
+}
+
+/* .title-container a:nth-of-type(1) { */
+/* 	margin-left: calc(3* var(--size)); */
+/* } */
+
+/* .title-container a:nth-of-type(2) { */
+/* 	margin-left: calc(2* var(--size)); */
+/* } */
+
+/* .title-container a:nth-of-type(3) { */
+/* 	margin-left: calc(var(--size)); */
+/* } */
+
+.title-container p:hover ,
+.title-container h1:hover {
+	background-color: var(--primary);
+	color: white;
+	cursor: crosshair;
 }
 
 .title-container.end h1{
@@ -39,12 +115,29 @@ a {
 }
 
 .end {
-	height: 95vh;
+	margin-top: 10vh;
+	height: 90vh;
 }
 
 .title-container h1 {
-	font-size: 8rem;
-	font-family: "dingdong";
+	font-size: 6rem;
+	text-transform: uppercase;
+	/* font-family: "Ha "; */
+}
+
+.link:hover {
+	color: var(--background);
+	background: var(--highlight);
+}
+
+.link {
+	margin-top: .5em;
+	padding: .25rem;
+	padding-top: .1rem;
+	font-family: "Roboto Mono";
+	font-size: .8rem;
+	color: var(--highlight);
+	border-bottom: 1px solid var(--highlight);
 }
 
 .websites-container{
@@ -56,10 +149,12 @@ a {
 }
 
 .project {
+	background-color: var(--background);
+	border: 1px solid var(--light-primary);
 	padding: 1em 0;
 	margin: 1rem 0;
   display: grid;
-  height: 30vh;
+  height: 20vh; 
   overflow: visible;
 	position: relative;
   transition: all 250ms;
@@ -69,9 +164,22 @@ a {
 	opacity: 0;
 }
 
-.project h1 {
-	opacity: .4;
+h2 {
+	font-weight: 100;
+	font-size: 2.8em;
+	margin-bottom: 1.1rem;
 }
+
+h3 {
+	font-size: 2.0em;
+}
+
+.project h3 {
+	color: #0005;
+	/* text-transform: uppercase; */
+	font-weight: 500;
+}
+
 .project p {
 	max-width: calc(var(--size) * var(--blocks) / 2);
   line-height: 1.2em;
@@ -79,16 +187,32 @@ a {
   font-weight: 600;
 }
 
-.project > .metadata {
-		border-right: 1px solid #0002;
+.metadata {
+	/* border-right: 1px solid #0002; */
+	padding: 1rem;
+	height: inherit;
+}
+
+.project > .metadata .ugh {
+	opacity: 0;
 }
 
 .project:hover{
 	cursor: pointer;
-	background-color: rgba(127,0,255,.7);
-	box-shadow: 0 0 15px 25px rgba(127,0,255,.7);
 	color: white;
 	height: 50vh;
+
+	background-color: var(--background);
+	border: 0px solid var(--light-primary);
+	padding: 5vh 0;
+	/* margin: 5vh 0; */
+}
+
+.project:hover .metadata{
+	background-color: var(--primary);
+	box-shadow: 0 0 15px 35px var(--primary);
+	overflow-y: clip;
+	max-height: 100%;
 }
 
 .options {
@@ -110,8 +234,51 @@ a {
 }
 
 .hidden {
+	/* box-shadow: 0 0 15px 5px rgb(232, 251, 112); */
 	width: 100%;
 	opacity: 0;
+	z-index: 99;
+	position: relative;
 	pointer-events: none;
-  transition: all 300ms ease-out;
+	border: 1.5px solid var(--primary);
+  padding: .5rem;
+  background: #fff; transition: all 300ms ease-out;
+}
+
+.above {
+	position: absolute;
+	z-index: 99;
+}
+
+.project:hover .hidden{
+	opacity: 1;
+}
+
+.project:hover > .metadata .ugh {
+	opacity: 1;
+}
+
+.project[size="mobile"] .above{
+	position: unset;
+}
+
+.project[size="mobile"] p {
+	max-width: 100%;
+}
+
+.project[size="mobile"] {
+	height: auto;
+	border: 0px solid;
+}
+
+.project[size="mobile"] .options{
+	display: none;
+}
+
+.project[size="mobile"] .hidden{
+	opacity: 1;
+}
+
+.project[size="mobile"] > .metadata .ugh {
+	opacity: 1;
 }
