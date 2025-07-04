@@ -11,7 +11,7 @@ function shuffle_projects(parent) {
 
 	// Remove all children from the parent
 	children.forEach(child => {
-		if(!child.classList.contains("project")) return 
+		// if(!child.classList.contains("project")) return 
 		children_list.push(child)
 		child.remove()
 	});
@@ -40,9 +40,7 @@ function dhamaka(not){
 
 	setTimeout(() => {
 		document.body.appendChild(top)
-
 		refreshObserver()
-
 		setTimeout(() => {
 			not.classList.remove("end")
 			top.classList.add("end")

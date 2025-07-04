@@ -6,10 +6,14 @@
 		--gap: calc((var(--width) - (var(--blocks) * var(--block-width)))/ var(--blocks));
 		--size: calc(var(--gap) + var(--block-width));
 		--primary: rgba(127,0,255,.7);
-		--highlight: rgb(255, 145, 50);
+		--white: #eee;
+		--black: #222;
+		--highlight: rgb(255, 155, 255);
 		--light-primary: rgba(227,215,215);
 		--background: #eee;
 }
+
+
 
 
 @font-face{
@@ -39,7 +43,7 @@ body {
 	font-family: "haskoy", sans-serif;
 	background-color: var(--background);
 	--size-1: 10%;
-	--size-2: 95%;
+	--size-2: 75%;
 
 	background:
 		radial-gradient(circle, transparent var(--size-1), var(--background) var(--size-1), var(--background) var(--size-2), transparent var(--size-2), transparent),
@@ -63,12 +67,16 @@ body {
 }
 
 @media only screen and (max-width: 800px) {
+	:root {
+		--highlight: black;
+	}
+
 	.title-container {
 		height: auto;
 	}
 }
 
-.title-container p{
+.title-container p, span{
 	max-width: 70ch;
 	line-height: 1.3em;
 	/* margin-bottom: .7em; */
@@ -76,19 +84,24 @@ body {
 	color: var(--primary);
 	padding: 1em;
 	/* border: .5px solid var(--light-primary); */
-	border-left: 1.5px solid var(--light-primary);
+	/* border-left: 1.5px solid var(--light-primary); */
+	border-bottom: 1.5px solid var(--light-primary);
 }
 
 .title-container h1 {
 	padding: 2rem 0;
-	border-bottom: 1.5px solid var(--light-primary);
-}
-.title-container p:nth-of-type(1) {
-	margin-left: calc(3* var(--size));
 }
 
-.title-container p:nth-of-type(2) {
-	margin-left: calc(2* var(--size));
+@media only screen and (min-width: 800px) {
+
+	.title-container p:nth-of-type(1) {
+		margin-left: calc(3* var(--size));
+	}
+
+	.title-container p:nth-of-type(2) {
+		margin-left: calc(2* var(--size));
+	}
+
 }
 
 /* .title-container a:nth-of-type(1) { */
@@ -103,8 +116,7 @@ body {
 /* 	margin-left: calc(var(--size)); */
 /* } */
 
-.title-container p:hover ,
-.title-container h1:hover {
+.title-container p:hover, h1:hover, span:hover, a:hover {
 	background-color: var(--primary);
 	color: white;
 	cursor: crosshair;
@@ -126,8 +138,8 @@ body {
 }
 
 .link:hover {
-	color: var(--background);
-	background: var(--highlight);
+	color: var(--black);
+	background: var(--white);
 }
 
 .link {

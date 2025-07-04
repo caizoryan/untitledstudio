@@ -79,6 +79,7 @@ html += `
 	<div id="about" class="title-container">
 		<h1> 19A Studio </h1>
 
+		<a href="#contact"> <span>Contact</span> </a>
 		<p>
 			19A is a web design and development studio focused on bridging the gap between digital and physical media.
 			While print design tools are highly refined, web design remains dominated by developer-centric tools and workflows.
@@ -88,7 +89,6 @@ html += `
 			<p>
 			Positioned at the intersection of digital materiality, physical computing, and AI, our studio aims to push the boundaries of how the web can feel, function, and inspire.
 		</p>
-		<a href="#contact"> <p>Contact</p> </a>
 	</div>
 
 	<div class="websites-container">
@@ -143,8 +143,7 @@ html += `</p>
 					`
  })  } if (website.link) { 
 html += `
-
-					<a class="above link" level=5 href="`
+					<a class="above link" level=3 href="`
 
 html += website.link
 
@@ -188,11 +187,13 @@ html += `
 
 	<div id="contact" class="title-container end">
 		<h1> 19A Studio </h1>
+
+		<a href="#about"><span class="item">About</span></a>
 		<a href="mailto:ass@monkey.com"><p class="item">[email]</p></a>
 		<a href="mailto:ass@monkey.com"><p class="item">[instagram]</p></a>
 		<a href="mailto:ass@monkey.com"><p class="item">[are.na]</p></a>
-		<a href="#about"><p class="item">About</p></a>
 	</div>
+
 </body>
 
 <script src="./script.js"> </script>

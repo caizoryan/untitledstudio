@@ -1,0 +1,5 @@
+A search engine for XKCD Comics.
+---
+XKCD Comics have a primary audience of programmers. The design of the website took this into consideration and exposed the inner workings and data flow occuring between the client and server and used it as design elements to structure the website.
+---
+Made in collaboration with Aryaman Gupta
