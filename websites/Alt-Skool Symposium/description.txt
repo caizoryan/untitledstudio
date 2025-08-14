@@ -1,3 +1,2 @@
 Website made for a symposium hosted by 100m at OCAD University.
 ---
-Dynamic identity, buzz words alive.

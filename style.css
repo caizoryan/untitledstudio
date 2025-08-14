@@ -14,8 +14,6 @@
 }
 
 
-
-
 @font-face{
 	font-family: "dingdong";
 	src: url("./fonts/DINdong.otf");
@@ -54,7 +52,6 @@ body {
 	/* background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px; */
 }
 
-
 .title-container {
 	margin: auto;
   width: var(--width);
@@ -82,27 +79,28 @@ body {
 	/* margin-bottom: .7em; */
 	font-weight: 600;
 	color: var(--primary);
-	padding: 1em;
+	padding: 1em 0;
+	/* margin-top: .5em; */
 	/* border: .5px solid var(--light-primary); */
 	/* border-left: 1.5px solid var(--light-primary); */
-	border-bottom: 1.5px solid var(--light-primary);
+	/* border-bottom: 1.5px solid var(--light-primary); */
 }
 
 .title-container h1 {
 	padding: 2rem 0;
 }
 
-@media only screen and (min-width: 800px) {
+/* @media only screen and (min-width: 800px) { */
 
-	.title-container p:nth-of-type(1) {
-		margin-left: calc(3* var(--size));
-	}
+/* 	.title-container p:nth-of-type(1) { */
+/* 		margin-left: calc(3* var(--size)); */
+/* 	} */
 
-	.title-container p:nth-of-type(2) {
-		margin-left: calc(2* var(--size));
-	}
+/* 	.title-container p:nth-of-type(2) { */
+/* 		margin-left: calc(2* var(--size)); */
+/* 	} */
 
-}
+/* } */
 
 /* .title-container a:nth-of-type(1) { */
 /* 	margin-left: calc(3* var(--size)); */
