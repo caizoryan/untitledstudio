@@ -17,6 +17,7 @@ let blocks = 8
 	:root {
 		--blocks: %%+blocks%%;
 	}
+
 	
 %%for (const i of Array(blocks).keys()) {%%
 	.project[size="%%+i+1%%"]{
@@ -82,7 +83,7 @@ let blocks = 8
 			</div>
 
 			%% if (website.type == "video") {%%
-				<video class="hidden" loop autoplay src="%%+website.cover%%"> </video>
+				<video class="hidden" loop src="%%+website.cover%%"> </video>
 			%% } %%
 
 

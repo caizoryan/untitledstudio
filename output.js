@@ -10,7 +10,7 @@ let blocks = 8
 html += `
 <html>
 <head>
-	<title>19A Studio</title>
+	<title>IF Machine Works Studio</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="./style.css">
@@ -24,6 +24,7 @@ html += blocks
 
 html += `;
 	}
+
 	
 `
 for (const i of Array(blocks).keys()) {
@@ -82,7 +83,7 @@ html += `
 
 		<a href="#contact"> <p>Contact</p> </a>
 		<p>
-			19A is a web design and development studio focused on bridging the gap between digital and physical media.
+			IF Machine Works is a web design and development studio focused on bridging the gap between digital and physical media.
 			While print design tools are highly refined, web design remains dominated by developer-centric tools and workflows.
 			Our goal is to bring design-driven thinking into the digital space, creating unique web experiences and products.
 			</p>
@@ -164,7 +165,7 @@ html += `
 			`
  if (website.type == "video") {
 html += `
-				<video class="hidden" loop autoplay src="`
+				<video class="hidden" loop src="`
 
 html += website.cover
 
