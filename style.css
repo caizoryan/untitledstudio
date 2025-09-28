@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Roboto:ital@0;1&display=swap');
 
 :root{
-		--width: 90vw;
+		--width: 95vw;
 		--block-width: 1rem;
 		--gap: calc((var(--width) - (var(--blocks) * var(--block-width)))/ var(--blocks));
 		--size: calc(var(--gap) + var(--block-width));
@@ -17,6 +17,16 @@
 @font-face{
 	font-family: "dingdong";
 	src: url("./fonts/DINdong.otf");
+}
+
+@font-face{
+	font-family: "eq";
+	src: url("./fonts/EquitanSans-Regular.woff2");
+}
+
+@font-face{
+	font-family: "pir";
+	src: url("./fonts/Pirelli-Light.woff2");
 }
 
 @font-face{
@@ -39,17 +49,6 @@ a {
 
 body {
 	font-family: "haskoy", sans-serif;
-	/* background-color: var(--background); */
-	/* --size-1: 10%; */
-	/* --size-2: 75%; */
-
-	/* background: */
-	/* 	radial-gradient(circle, transparent var(--size-1), var(--background) var(--size-1), var(--background) var(--size-2), transparent var(--size-2), transparent), */
-	/* 	radial-gradient(circle, transparent var(--size-1), var(--background) var(--size-1), var(--background) var(--size-2), transparent var(--size-2), transparent) */
-	/* 									25px 25px, linear-gradient(var(--light-primary) 2px, transparent 2px) */
-	/* 									0 -1px, linear-gradient(90deg, var(--light-primary) 2px, var(--background) 2px) -1px 0; */
-
-	/* background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px; */
 }
 
 .title-container {
@@ -59,7 +58,6 @@ body {
 	height: 60vh;
 	margin-bottom: 1em;
 	border-bottom: 2px dotted var(--light-primary);
-	/* background-color: var(--background); */
 	opacity: 0.8;
 }
 
@@ -79,48 +77,13 @@ body {
 .title-container p, span{
 	max-width: 70ch;
 	line-height: 1.3em;
-	/* margin-bottom: .7em; */
 	font-weight: 600;
 	color: var(--primary);
 	padding: 1em 0;
-	/* margin-top: .5em; */
-	/* border: .5px solid var(--light-primary); */
-	/* border-left: 1.5px solid var(--light-primary); */
-	/* border-bottom: 1.5px solid var(--light-primary); */
 }
 
 .title-container h1 {
 	padding: 2rem 0;
-}
-
-/* @media only screen and (min-width: 800px) { */
-
-/* 	.title-container p:nth-of-type(1) { */
-/* 		margin-left: calc(3* var(--size)); */
-/* 	} */
-
-/* 	.title-container p:nth-of-type(2) { */
-/* 		margin-left: calc(2* var(--size)); */
-/* 	} */
-
-/* } */
-
-/* .title-container a:nth-of-type(1) { */
-/* 	margin-left: calc(3* var(--size)); */
-/* } */
-
-/* .title-container a:nth-of-type(2) { */
-/* 	margin-left: calc(2* var(--size)); */
-/* } */
-
-/* .title-container a:nth-of-type(3) { */
-/* 	margin-left: calc(var(--size)); */
-/* } */
-
-.title-container p:hover, h1:hover, span:hover, a:hover {
-	background-color: var(--primary);
-	color: white;
-	cursor: crosshair;
 }
 
 .title-container.end h1{
@@ -163,9 +126,12 @@ body {
 
 .project {
 	background-color: var(--background);
-	border: 1px solid var(--light-primary);
+	grid-gap: 4em;
+	grid-template-columns: calc(40% - 2em) calc(60% - 2em);
+	/* border: 1px solid var(--light-primary); */
 	padding: 1em 0;
 	margin: 1rem 0;
+	margin-bottom: 3rem;
   display: grid;
   height: 20vh; 
   overflow: visible;
@@ -202,7 +168,7 @@ h3 {
 
 .metadata {
 	/* border-right: 1px solid #0002; */
-	padding: 1rem;
+	padding: 0 2rem;
 	height: inherit;
 }
 
@@ -210,20 +176,17 @@ h3 {
 	opacity: 0;
 }
 
-.project:hover{
+.project{
 	cursor: ew-resize;
-	color: white;
-	height: 50vh;
-
+	color: var(--black);
+	height: 60vh;
 	background-color: var(--background);
-	border: 0px solid var(--light-primary);
 	padding: 5vh 0;
-	/* margin: 5vh 0; */
 }
 
 .project:hover .metadata{
-	background-color: var(--primary);
-	box-shadow: 0 0 15px 35px var(--primary);
+	/* background-color: var(--primary); */
+	/* box-shadow: 0 0 15px 35px var(--primary); */
 	overflow-y: clip;
 	max-height: 100%;
 }
@@ -236,7 +199,6 @@ h3 {
 	display: grid;
 	/*background-color: pink;*/
 	grid-template-columns: repeat(var(--blocks), 1fr);
-	/*grid-gap: calc((var(--width) - (var(--blocks) * var(--block-width)))/4);*/
 }
 
 .button {
@@ -248,14 +210,14 @@ h3 {
 
 .hidden {
 	/* box-shadow: 0 0 15px 5px rgb(232, 251, 112); */
-	width: 100%;
+	width: 95%;
 	opacity: 0;
 	z-index: 99;
 	position: relative;
 	pointer-events: none;
 	border: 1.5px solid var(--primary);
   padding: .5rem;
-  background: #fff; transition: all 300ms ease-out;
+  /* background: #fff; transition: all 300ms ease-out; */
 }
 
 .above {
@@ -263,11 +225,11 @@ h3 {
 	z-index: 99;
 }
 
-.project:hover .hidden{
+.project .hidden{
 	opacity: 1;
 }
 
-.project:hover > .metadata .ugh {
+.project > .metadata .ugh {
 	opacity: 1;
 }
 

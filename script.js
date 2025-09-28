@@ -61,24 +61,24 @@ function refreshObserver(){
 }
 
 function init(){
-	projects = document.querySelectorAll(".project")
-	projects.forEach(add_listeners)
+	// projects = document.querySelectorAll(".project")
+	// projects.forEach(add_listeners)
 
-	buttons = document.querySelectorAll(".options .button")
-	buttons.forEach(button_click)
+	// buttons = document.querySelectorAll(".options .button")
+	// buttons.forEach(button_click)
 
-	const options = {threshold: 1};
+	// const options = {threshold: 1};
 	
-	observer = new IntersectionObserver(entries => {
-		entries.forEach(entry => {
-			if(entry.isIntersecting
-				 // && window.innerWidth > mobile
-				){
-				dhamaka(entry.target)
-			}
-		})
-	}, options)
-	initObserver()
+	// observer = new IntersectionObserver(entries => {
+	// 	entries.forEach(entry => {
+	// 		if(entry.isIntersecting
+	// 			 // && window.innerWidth > mobile
+	// 			){
+	// 			dhamaka(entry.target)
+	// 		}
+	// 	})
+	// }, options)
+	// initObserver()
 	check_mobile_and_update()
 }
 

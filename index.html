@@ -6,396 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="./style.css">
 </head>
-
-<style>
-	:root {
-		--blocks: 8;
-	}
-
-	
-
-	.project[size="1"]{
-		grid-template-columns: calc(var(--size) * 1) auto;
-	}
-
-	.project[size="0"] .metadata h3{
-		font-size: 1.1em;
-	}
-
-	
-		.project[size="0"] .metadata *[level="0"] {
-			opacity: 0;
-		}
-	
-		.project[size="0"] .metadata *[level="1"] {
-			opacity: 0;
-		}
-	
-		.project[size="0"] .metadata *[level="2"] {
-			opacity: 0;
-		}
-	
-		.project[size="0"] .metadata *[level="3"] {
-			opacity: 0;
-		}
-	
-		.project[size="0"] .metadata *[level="4"] {
-			opacity: 0;
-		}
-	
-		.project[size="0"] .metadata *[level="5"] {
-			opacity: 0;
-		}
-	
-		.project[size="0"] .metadata *[level="6"] {
-			opacity: 0;
-		}
-	
-		.project[size="0"] .metadata *[level="7"] {
-			opacity: 0;
-		}
-	
-	.project[size="2"]{
-		grid-template-columns: calc(var(--size) * 2) auto;
-	}
-
-	.project[size="1"] .metadata h3{
-		font-size: 1.1em;
-	}
-
-	
-		.project[size="1"] .metadata *[level="0"] {
-			opacity: 0;
-		}
-	
-		.project[size="1"] .metadata *[level="1"] {
-			opacity: 0;
-		}
-	
-		.project[size="1"] .metadata *[level="2"] {
-			opacity: 0;
-		}
-	
-		.project[size="1"] .metadata *[level="3"] {
-			opacity: 0;
-		}
-	
-		.project[size="1"] .metadata *[level="4"] {
-			opacity: 0;
-		}
-	
-		.project[size="1"] .metadata *[level="5"] {
-			opacity: 0;
-		}
-	
-		.project[size="1"] .metadata *[level="6"] {
-			opacity: 0;
-		}
-	
-		.project[size="1"] .metadata *[level="7"] {
-			opacity: 0;
-		}
-	
-	.project[size="3"]{
-		grid-template-columns: calc(var(--size) * 3) auto;
-	}
-
-	.project[size="2"] .metadata h3{
-		font-size: 1.6em;
-	}
-
-	
-		.project[size="2"] .metadata *[level="0"] {
-			opacity: 1;
-		}
-	
-		.project[size="2"] .metadata *[level="1"] {
-			opacity: 0;
-		}
-	
-		.project[size="2"] .metadata *[level="2"] {
-			opacity: 0;
-		}
-	
-		.project[size="2"] .metadata *[level="3"] {
-			opacity: 0;
-		}
-	
-		.project[size="2"] .metadata *[level="4"] {
-			opacity: 0;
-		}
-	
-		.project[size="2"] .metadata *[level="5"] {
-			opacity: 0;
-		}
-	
-		.project[size="2"] .metadata *[level="6"] {
-			opacity: 0;
-		}
-	
-		.project[size="2"] .metadata *[level="7"] {
-			opacity: 0;
-		}
-	
-	.project[size="4"]{
-		grid-template-columns: calc(var(--size) * 4) auto;
-	}
-
-	.project[size="3"] .metadata h3{
-		font-size: 2.3em;
-	}
-
-	
-		.project[size="3"] .metadata *[level="0"] {
-			opacity: 1;
-		}
-	
-		.project[size="3"] .metadata *[level="1"] {
-			opacity: 1;
-		}
-	
-		.project[size="3"] .metadata *[level="2"] {
-			opacity: 0;
-		}
-	
-		.project[size="3"] .metadata *[level="3"] {
-			opacity: 0;
-		}
-	
-		.project[size="3"] .metadata *[level="4"] {
-			opacity: 0;
-		}
-	
-		.project[size="3"] .metadata *[level="5"] {
-			opacity: 0;
-		}
-	
-		.project[size="3"] .metadata *[level="6"] {
-			opacity: 0;
-		}
-	
-		.project[size="3"] .metadata *[level="7"] {
-			opacity: 0;
-		}
-	
-	.project[size="5"]{
-		grid-template-columns: calc(var(--size) * 5) auto;
-	}
-
-	.project[size="4"] .metadata h3{
-		font-size: 2.3em;
-	}
-
-	
-		.project[size="4"] .metadata *[level="0"] {
-			opacity: 1;
-		}
-	
-		.project[size="4"] .metadata *[level="1"] {
-			opacity: 1;
-		}
-	
-		.project[size="4"] .metadata *[level="2"] {
-			opacity: 1;
-		}
-	
-		.project[size="4"] .metadata *[level="3"] {
-			opacity: 0;
-		}
-	
-		.project[size="4"] .metadata *[level="4"] {
-			opacity: 0;
-		}
-	
-		.project[size="4"] .metadata *[level="5"] {
-			opacity: 0;
-		}
-	
-		.project[size="4"] .metadata *[level="6"] {
-			opacity: 0;
-		}
-	
-		.project[size="4"] .metadata *[level="7"] {
-			opacity: 0;
-		}
-	
-	.project[size="6"]{
-		grid-template-columns: calc(var(--size) * 6) auto;
-	}
-
-	.project[size="5"] .metadata h3{
-		font-size: 2.3em;
-	}
-
-	
-		.project[size="5"] .metadata *[level="0"] {
-			opacity: 1;
-		}
-	
-		.project[size="5"] .metadata *[level="1"] {
-			opacity: 1;
-		}
-	
-		.project[size="5"] .metadata *[level="2"] {
-			opacity: 1;
-		}
-	
-		.project[size="5"] .metadata *[level="3"] {
-			opacity: 1;
-		}
-	
-		.project[size="5"] .metadata *[level="4"] {
-			opacity: 0;
-		}
-	
-		.project[size="5"] .metadata *[level="5"] {
-			opacity: 0;
-		}
-	
-		.project[size="5"] .metadata *[level="6"] {
-			opacity: 0;
-		}
-	
-		.project[size="5"] .metadata *[level="7"] {
-			opacity: 0;
-		}
-	
-	.project[size="7"]{
-		grid-template-columns: calc(var(--size) * 7) auto;
-	}
-
-	.project[size="6"] .metadata h3{
-		font-size: 2.3em;
-	}
-
-	
-		.project[size="6"] .metadata *[level="0"] {
-			opacity: 1;
-		}
-	
-		.project[size="6"] .metadata *[level="1"] {
-			opacity: 1;
-		}
-	
-		.project[size="6"] .metadata *[level="2"] {
-			opacity: 1;
-		}
-	
-		.project[size="6"] .metadata *[level="3"] {
-			opacity: 1;
-		}
-	
-		.project[size="6"] .metadata *[level="4"] {
-			opacity: 1;
-		}
-	
-		.project[size="6"] .metadata *[level="5"] {
-			opacity: 0;
-		}
-	
-		.project[size="6"] .metadata *[level="6"] {
-			opacity: 0;
-		}
-	
-		.project[size="6"] .metadata *[level="7"] {
-			opacity: 0;
-		}
-	
-	.project[size="8"]{
-		grid-template-columns: calc(var(--size) * 8) auto;
-	}
-
-	.project[size="7"] .metadata h3{
-		font-size: 2.3em;
-	}
-
-	
-		.project[size="7"] .metadata *[level="0"] {
-			opacity: 1;
-		}
-	
-		.project[size="7"] .metadata *[level="1"] {
-			opacity: 1;
-		}
-	
-		.project[size="7"] .metadata *[level="2"] {
-			opacity: 1;
-		}
-	
-		.project[size="7"] .metadata *[level="3"] {
-			opacity: 1;
-		}
-	
-		.project[size="7"] .metadata *[level="4"] {
-			opacity: 1;
-		}
-	
-		.project[size="7"] .metadata *[level="5"] {
-			opacity: 1;
-		}
-	
-		.project[size="7"] .metadata *[level="6"] {
-			opacity: 0;
-		}
-	
-		.project[size="7"] .metadata *[level="7"] {
-			opacity: 0;
-		}
-	
-
-</style>
 <body>
-
 	<div id="about" class="title-container">
 		<h1> If Machine Works </h1>
-
-		<a href="#contact"> <p>Contact</p> </a>
 		<p>
 			IF Machine Works is a web design and development studio focused on bridging the gap between digital and physical media.
 			While print design tools are highly refined, web design remains dominated by developer-centric tools and workflows.
 			Our goal is to bring design-driven thinking into the digital space, creating unique web experiences and products.
 			</p>
-		<p>
-		Positioned at the intersection of digital materiality, physical computing, and AI, our studio aims to push the boundaries of how the web can feel, function, and inspire.
-	</p>
+
+			<p>
+			Positioned at the intersection of digital materiality, physical computing, and AI, our studio aims to push the boundaries of how the web can feel, function, and inspire.
+		</p>
+
+		<a href="mailto:ifmachineworks@gmail"><p class="item">[email]</p></a>
+		<a href="https://instagram.com"><p class="item">[instagram]</p></a>
 	</div>
 
 	<div class="websites-container">
 		<!-- <h2> Featured Work </h2> -->
 		
-		<div class="project" size="2" id="id-264147">
-			<div class="options">
-				
-					<!-- <div class="button" size="8"></div>   -->
-					<div class="button" size="8"></div>
-				
-					<!-- <div class="button" size="7"></div>   -->
-					<div class="button" size="7"></div>
-				
-					<!-- <div class="button" size="6"></div>   -->
-					<div class="button" size="6"></div>
-				
-					<!-- <div class="button" size="5"></div>   -->
-					<div class="button" size="5"></div>
-				
-					<!-- <div class="button" size="4"></div>   -->
-					<div class="button" size="4"></div>
-				
-					<!-- <div class="button" size="3"></div>   -->
-					<div class="button" size="3"></div>
-				
-					<!-- <div class="button" size="2"></div>   -->
-					<div class="button" size="2"></div>
-				
-					<!-- <div class="button" size="1"></div>   -->
-					<div class="button" size="1"></div>
-				
-			</div>
-
+		<div class="project" size="2" id="id-916328">
 			<div class="metadata">
 				<h3 > 100m Screenings </h3>
-				<div class="ugh">
 
+				<div class="ugh">
 				
 						<p class="hover" level=1>Film Catalogue for 100m Screenings.
 </p>
@@ -414,39 +49,11 @@
 			
 		</div>
 		
-		<div class="project" size="2" id="id-259714">
-			<div class="options">
-				
-					<!-- <div class="button" size="8"></div>   -->
-					<div class="button" size="8"></div>
-				
-					<!-- <div class="button" size="7"></div>   -->
-					<div class="button" size="7"></div>
-				
-					<!-- <div class="button" size="6"></div>   -->
-					<div class="button" size="6"></div>
-				
-					<!-- <div class="button" size="5"></div>   -->
-					<div class="button" size="5"></div>
-				
-					<!-- <div class="button" size="4"></div>   -->
-					<div class="button" size="4"></div>
-				
-					<!-- <div class="button" size="3"></div>   -->
-					<div class="button" size="3"></div>
-				
-					<!-- <div class="button" size="2"></div>   -->
-					<div class="button" size="2"></div>
-				
-					<!-- <div class="button" size="1"></div>   -->
-					<div class="button" size="1"></div>
-				
-			</div>
-
+		<div class="project" size="2" id="id-49363">
 			<div class="metadata">
 				<h3 > Alt-Skool Symposium </h3>
-				<div class="ugh">
 
+				<div class="ugh">
 				
 						<p class="hover" level=1>Website made for a symposium hosted by 100m at OCAD University.
 </p>
@@ -468,39 +75,11 @@
 			
 		</div>
 		
-		<div class="project" size="2" id="id-851950">
-			<div class="options">
-				
-					<!-- <div class="button" size="8"></div>   -->
-					<div class="button" size="8"></div>
-				
-					<!-- <div class="button" size="7"></div>   -->
-					<div class="button" size="7"></div>
-				
-					<!-- <div class="button" size="6"></div>   -->
-					<div class="button" size="6"></div>
-				
-					<!-- <div class="button" size="5"></div>   -->
-					<div class="button" size="5"></div>
-				
-					<!-- <div class="button" size="4"></div>   -->
-					<div class="button" size="4"></div>
-				
-					<!-- <div class="button" size="3"></div>   -->
-					<div class="button" size="3"></div>
-				
-					<!-- <div class="button" size="2"></div>   -->
-					<div class="button" size="2"></div>
-				
-					<!-- <div class="button" size="1"></div>   -->
-					<div class="button" size="1"></div>
-				
-			</div>
-
+		<div class="project" size="2" id="id-412133">
 			<div class="metadata">
 				<h3 > Are.na API Playground </h3>
-				<div class="ugh">
 
+				<div class="ugh">
 				
 						<p class="hover" level=1>An Unofficial playground to explore the Are.na API.
 </p>
@@ -519,39 +98,11 @@
 			
 		</div>
 		
-		<div class="project" size="2" id="id-60016">
-			<div class="options">
-				
-					<!-- <div class="button" size="8"></div>   -->
-					<div class="button" size="8"></div>
-				
-					<!-- <div class="button" size="7"></div>   -->
-					<div class="button" size="7"></div>
-				
-					<!-- <div class="button" size="6"></div>   -->
-					<div class="button" size="6"></div>
-				
-					<!-- <div class="button" size="5"></div>   -->
-					<div class="button" size="5"></div>
-				
-					<!-- <div class="button" size="4"></div>   -->
-					<div class="button" size="4"></div>
-				
-					<!-- <div class="button" size="3"></div>   -->
-					<div class="button" size="3"></div>
-				
-					<!-- <div class="button" size="2"></div>   -->
-					<div class="button" size="2"></div>
-				
-					<!-- <div class="button" size="1"></div>   -->
-					<div class="button" size="1"></div>
-				
-			</div>
-
+		<div class="project" size="2" id="id-329169">
 			<div class="metadata">
 				<h3 > Gradex Website </h3>
-				<div class="ugh">
 
+				<div class="ugh">
 				
 						<p class="hover" level=1>A shared repository hosting Graphic Design student work of OCAD U's graduating class of 2025.
 </p>
@@ -574,39 +125,11 @@ Resembles folders
 			
 		</div>
 		
-		<div class="project" size="2" id="id-240127">
-			<div class="options">
-				
-					<!-- <div class="button" size="8"></div>   -->
-					<div class="button" size="8"></div>
-				
-					<!-- <div class="button" size="7"></div>   -->
-					<div class="button" size="7"></div>
-				
-					<!-- <div class="button" size="6"></div>   -->
-					<div class="button" size="6"></div>
-				
-					<!-- <div class="button" size="5"></div>   -->
-					<div class="button" size="5"></div>
-				
-					<!-- <div class="button" size="4"></div>   -->
-					<div class="button" size="4"></div>
-				
-					<!-- <div class="button" size="3"></div>   -->
-					<div class="button" size="3"></div>
-				
-					<!-- <div class="button" size="2"></div>   -->
-					<div class="button" size="2"></div>
-				
-					<!-- <div class="button" size="1"></div>   -->
-					<div class="button" size="1"></div>
-				
-			</div>
-
+		<div class="project" size="2" id="id-386531">
 			<div class="metadata">
 				<h3 > Guest Lecture </h3>
-				<div class="ugh">
 
+				<div class="ugh">
 				
 						<p class="hover" level=1>A holding page made for a Design talk given by Laura Coombs at OCAD University.
 </p>
@@ -623,39 +146,11 @@ Resembles folders
 			
 		</div>
 		
-		<div class="project" size="2" id="id-349817">
-			<div class="options">
-				
-					<!-- <div class="button" size="8"></div>   -->
-					<div class="button" size="8"></div>
-				
-					<!-- <div class="button" size="7"></div>   -->
-					<div class="button" size="7"></div>
-				
-					<!-- <div class="button" size="6"></div>   -->
-					<div class="button" size="6"></div>
-				
-					<!-- <div class="button" size="5"></div>   -->
-					<div class="button" size="5"></div>
-				
-					<!-- <div class="button" size="4"></div>   -->
-					<div class="button" size="4"></div>
-				
-					<!-- <div class="button" size="3"></div>   -->
-					<div class="button" size="3"></div>
-				
-					<!-- <div class="button" size="2"></div>   -->
-					<div class="button" size="2"></div>
-				
-					<!-- <div class="button" size="1"></div>   -->
-					<div class="button" size="1"></div>
-				
-			</div>
-
+		<div class="project" size="2" id="id-845680">
 			<div class="metadata">
 				<h3 > Internet Landlords  </h3>
-				<div class="ugh">
 
+				<div class="ugh">
 				
 						<p class="hover" level=1>Who owns the internet? Who runs the massive infrastructure that bestows our conveniences? 
 </p>
@@ -683,39 +178,11 @@ This website documents the research materials and the notes in addition to a nar
 			
 		</div>
 		
-		<div class="project" size="2" id="id-63947">
-			<div class="options">
-				
-					<!-- <div class="button" size="8"></div>   -->
-					<div class="button" size="8"></div>
-				
-					<!-- <div class="button" size="7"></div>   -->
-					<div class="button" size="7"></div>
-				
-					<!-- <div class="button" size="6"></div>   -->
-					<div class="button" size="6"></div>
-				
-					<!-- <div class="button" size="5"></div>   -->
-					<div class="button" size="5"></div>
-				
-					<!-- <div class="button" size="4"></div>   -->
-					<div class="button" size="4"></div>
-				
-					<!-- <div class="button" size="3"></div>   -->
-					<div class="button" size="3"></div>
-				
-					<!-- <div class="button" size="2"></div>   -->
-					<div class="button" size="2"></div>
-				
-					<!-- <div class="button" size="1"></div>   -->
-					<div class="button" size="1"></div>
-				
-			</div>
-
+		<div class="project" size="2" id="id-521902">
 			<div class="metadata">
 				<h3 > Salankar Pashine & Associates </h3>
-				<div class="ugh">
 
+				<div class="ugh">
 				
 						<p class="hover" level=1>Website for an Architecture + Interior Design firm.
 </p>
@@ -734,39 +201,11 @@ This website documents the research materials and the notes in addition to a nar
 			
 		</div>
 		
-		<div class="project" size="2" id="id-281334">
-			<div class="options">
-				
-					<!-- <div class="button" size="8"></div>   -->
-					<div class="button" size="8"></div>
-				
-					<!-- <div class="button" size="7"></div>   -->
-					<div class="button" size="7"></div>
-				
-					<!-- <div class="button" size="6"></div>   -->
-					<div class="button" size="6"></div>
-				
-					<!-- <div class="button" size="5"></div>   -->
-					<div class="button" size="5"></div>
-				
-					<!-- <div class="button" size="4"></div>   -->
-					<div class="button" size="4"></div>
-				
-					<!-- <div class="button" size="3"></div>   -->
-					<div class="button" size="3"></div>
-				
-					<!-- <div class="button" size="2"></div>   -->
-					<div class="button" size="2"></div>
-				
-					<!-- <div class="button" size="1"></div>   -->
-					<div class="button" size="1"></div>
-				
-			</div>
-
+		<div class="project" size="2" id="id-276783">
 			<div class="metadata">
 				<h3 > XKCD Search Engine </h3>
-				<div class="ugh">
 
+				<div class="ugh">
 				
 						<p class="hover" level=1>A search engine for XKCD Comics.
 </p>
@@ -793,13 +232,6 @@ Made in collaboration with Aryaman Gupta
 			
 		</div>
 		
-	</div>
-
-	<div id="contact" class="title-container end">
-		<h1> If Machine Works </h1>
-
-		<a href="#about"><span class="item">About</span></a>
-		<a href="mailto:ifmachineworks@gmail"><p class="item">[email]</p></a>
 	</div>
 
 </body>

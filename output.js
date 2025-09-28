@@ -15,73 +15,9 @@ html += `
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="./style.css">
 </head>
-
-<style>
-	:root {
-		--blocks: `
-
-html += blocks
-
-html += `;
-	}
-
-	
-`
-for (const i of Array(blocks).keys()) {
-html += `
-	.project[size="`
-
-html += i+1
-
-html += `"]{
-		grid-template-columns: calc(var(--size) * `
-
-html += i+1
-
-html += `) auto;
-	}
-
-	.project[size="`
-
-html += i
-
-html += `"] .metadata h3{
-		font-size: `
-
-html +=  i > 2 ? "2.3" : i == 2 ? "1.6": "1.1"
-
-html += `em;
-	}
-
-	`
-for (const f of Array(blocks).keys()) {
-html += `
-		.project[size="`
-
-html += i
-
-html += `"] .metadata *[level="`
-
-html += f
-
-html += `"] {
-			opacity: `
-
-html +=  i > f+1 ? 1:0
-
-html += `;
-		}
-	`
-}}
-html += `
-
-</style>
 <body>
-
 	<div id="about" class="title-container">
 		<h1> If Machine Works </h1>
-
-		<a href="#contact"> <p>Contact</p> </a>
 		<p>
 			IF Machine Works is a web design and development studio focused on bridging the gap between digital and physical media.
 			While print design tools are highly refined, web design remains dominated by developer-centric tools and workflows.
@@ -91,6 +27,9 @@ html += `
 			<p>
 			Positioned at the intersection of digital materiality, physical computing, and AI, our studio aims to push the boundaries of how the web can feel, function, and inspire.
 		</p>
+
+		<a href="mailto:ifmachineworks@gmail"><p class="item">[email]</p></a>
+		<a href="https://instagram.com"><p class="item">[instagram]</p></a>
 	</div>
 
 	<div class="websites-container">
@@ -103,33 +42,14 @@ html += `
 html += id()
 
 html += `">
-			<div class="options">
-				`
-for (const i of Array(blocks).keys()) {
-html += `
-					<!-- <div class="button" size="`
-
-html += blocks-i
-
-html += `"></div>   -->
-					<div class="button" size="`
-
-html += blocks-i
-
-html += `"></div>
-				`
- } 
-html += `
-			</div>
-
 			<div class="metadata">
 				<h3 > `
 
 html +=  website.title 
 
 html += ` </h3>
-				<div class="ugh">
 
+				<div class="ugh">
 				`
 if (website.description) {  website.description.forEach((d, i) => { 
 html += `
@@ -185,13 +105,6 @@ html += `
 		`
  } 
 html += `
-	</div>
-
-	<div id="contact" class="title-container end">
-		<h1> If Machine Works </h1>
-
-		<a href="#about"><span class="item">About</span></a>
-		<a href="mailto:ifmachineworks@gmail"><p class="item">[email]</p></a>
 	</div>
 
 </body>
