@@ -8,7 +8,7 @@
 		--primary: rgba(127,0,255,.7);
 		--white: #eee;
 		--black: #222;
-		--highlight: rgb(255, 155, 255);
+		--highlight: rgb(0, 0, 255);
 		--light-primary: rgba(227,215,215);
 		--background: #eee;
 }
@@ -100,18 +100,19 @@ body {
 }
 
 .link:hover {
-	color: var(--black);
-	background: var(--white);
+	background: var(--black);
+	color: var(--white);
 }
 
 .link {
 	margin-top: .5em;
 	padding: .25rem;
 	padding-top: .1rem;
+	padding-left: 0;
 	font-family: "Roboto Mono";
 	font-size: .8rem;
 	color: var(--highlight);
-	border-bottom: 1px solid var(--highlight);
+	/* border-bottom: 1px solid var(--highlight); */
 }
 
 .websites-container{
@@ -149,6 +150,7 @@ h2 {
 
 h3 {
 	font-size: 2.0em;
+	margin-bottom: 1.8rem;
 }
 
 .project h3 {
@@ -156,6 +158,7 @@ h3 {
 	/* text-transform: uppercase; */
 	font-weight: 500;
 }
+
 
 .project p {
 	max-width: calc(var(--size) * var(--blocks) / 2);
