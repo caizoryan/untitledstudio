@@ -85,7 +85,7 @@ html += `
 			`
  if (website.type == "video") {
 html += `
-				<video class="hidden" autoplay webkit-playsinline playsinline loop src="`
+				<video class="hidden" muted autoplay webkit-playsinline playsinline loop src="`
 
 html += website.cover
 
