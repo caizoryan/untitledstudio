@@ -1,7 +1,12 @@
 import { spawn, spawnSync } from "child_process"
 import { compile_file } from "./main.js"
 
-compile_file("./input.html", "./output.js", "./index.html", "./import.js", ["websites"])
+compile_file(
+	"./input.html",
+	"./output.js",
+	"./index.html",
+	"./import.js",
+	["websites"])
 let out = spawn("node" , ["./output.js"])
 
 out.stdout.on('data', (data) => {

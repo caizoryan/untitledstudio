@@ -1,9 +1,10 @@
 import fs from "fs"
 
 let dir = "./websites"
-export let websites = fs.readdirSync(dir).map((website) => ({ title: website }))
 
-websites.map((website) => {
+
+export let websites = fs.readdirSync(dir).map((website) => ({ title: website }))
+	.map((website) => {
 		let files = fs.readdirSync(dir + "/" + website.title)
 		let cover = files.find((file) => file.includes("cover"))
 
@@ -29,3 +30,4 @@ websites.map((website) => {
 
 		return website
 })
+

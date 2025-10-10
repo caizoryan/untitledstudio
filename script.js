@@ -1,85 +1,50 @@
+import { fade_in_stagger, fade_out } from "./transition.js"
+
 let projects
-let buttons
-let observer
 
-function shuffle_projects(parent) {
-	console.log("shuffling")
-	// Convert the child nodes into an array
+function setup_mouse (){
+	let el_container =	document.createElement("div")
+	let el_x = document.createElement("p")
+	let el_y = document.createElement("p")
 
-	const children_list = []
-	const children = parent.childNodes;
+	el_container.style.position = "fixed"
 
-	// Remove all children from the parent
-	children.forEach(child => {
-		// if(!child.classList.contains("project")) return 
-		children_list.push(child)
-		child.remove()
-	});
+	document.addEventListener("mousemove", (e) => {
+		el_x.innerText = e.clientX + "px"
+		el_y.innerText = e.clientY + "px"
+		el_container.style.left = e.clientX+10 + "px"
+		el_container.style.top = e.clientY +10+ "px"
+	})
 
-	children_list.sort(() => Math.random() > .5 ? true : false)
-	children_list.sort(() => Math.random() > .5 ? true : false)
-	children_list.sort(() => Math.random() > .5 ? true : false)
-	children_list.sort(() => Math.random() > .5 ? true : false)
-	children_list.sort(() => Math.random() > .5 ? true : false)
+	el_container.classList.add('mousebox')
 
-	// Append the shuffled elements back to the parent
-	children_list.forEach(child => parent.appendChild(child));
+	el_container.appendChild(el_x)
+	el_container.appendChild(el_y)
+
+	document.body.appendChild(el_container)
 }
 
-function dhamaka(not){
-	let top = document.querySelector(".title-container")
-	top.remove()
+function shuffle(){
+	let projects = Array.from(document.querySelectorAll(".project"))
 
-  let copy = document.querySelector(".websites-container")
-	copy.remove()
+}
 
+function remove_loader(){
+	fade_out(".loader", 700, 250)
 	setTimeout(() => {
-		document.body.appendChild(copy)
-		shuffle_projects(copy)
-	}, 50)
-
-	setTimeout(() => {
-		document.body.appendChild(top)
-		refreshObserver()
-		setTimeout(() => {
-			not.classList.remove("end")
-			top.classList.add("end")
-			initObserver()
-		}, 30)
-	}, 100)
-
-
-
-	// TODO also add one at the end
+		document.querySelector(".loader").remove()
+	}, 750)
 }
 
-function initObserver(){
-	observer.observe(document.querySelector(".end"))
-}
-function refreshObserver(){
-	observer.unobserve(document.querySelector(".end"))
+function init_animations(){
+	fade_in_stagger(".project", 550, 150, 850)
 }
 
 function init(){
-	// projects = document.querySelectorAll(".project")
-	// projects.forEach(add_listeners)
-
-	// buttons = document.querySelectorAll(".options .button")
-	// buttons.forEach(button_click)
-
-	// const options = {threshold: 1};
-	
-	// observer = new IntersectionObserver(entries => {
-	// 	entries.forEach(entry => {
-	// 		if(entry.isIntersecting
-	// 			 // && window.innerWidth > mobile
-	// 			){
-	// 			dhamaka(entry.target)
-	// 		}
-	// 	})
-	// }, options)
-	// initObserver()
-	check_mobile_and_update()
+	shuffle()
+	setup_mouse()
+	remove_loader()
+	init_animations()
 }
 
 let mobile = 800
@@ -90,31 +55,8 @@ function check_mobile_and_update(){
 	else update_size("2")
 }
 
-function button_click(button) {
-	//if (button.getAttribute("size") === "0") return
-	button.onmouseenter = () => {
-		if (window.innerWidth < mobile) return
-		update_size(button.getAttribute("size"))
-	}
-}
-
 function update_size(size){
 	projects.forEach((e) => e.setAttribute("size", size))
-}
-
-function add_listeners(element){
-	let id = element.id
-	let image = document.querySelector("#" + id + " .hidden")
-
-	element.onmouseenter = () => {
-		// image.style.opacity = 1 
-		if (image.play) image.play()
-	}
-
-	element.onmouseleave = () => {
-		// image.style.opacity = 0 
-		if (image.pause) image.pause()
-	}
 }
 
 init()
