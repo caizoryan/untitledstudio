@@ -54,11 +54,11 @@ function remove_loader(){
 
 function init_animations(){
 	fade_in_stagger(".project", 650, 150, 1150)
-	fade_in_any_stagger(".alt-span", 300, 80, 50)
+	// fade_in_any_stagger(".alt-span", 300, 80, 50)
 }
 
 function init(){
-	// header_magic()
+	header_magic()
 	setup_mouse()
 	remove_loader()
 	init_animations()
