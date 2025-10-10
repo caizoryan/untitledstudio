@@ -14,6 +14,13 @@ function setup_mouse (){
 		el_y.innerText = e.clientY + "px"
 		el_container.style.left = e.clientX+10 + "px"
 		el_container.style.top = e.clientY +10+ "px"
+
+		let s = document.querySelector(".project:hover > .hidden")
+		let v = 50
+		if (s) s.style.transform=`
+rotateY(${ ((e.clientX / window.innerWidth ) - .5) * v }deg)
+rotateX(${ ((e.clientY / window.innerHeight) - .5) * v }deg)
+`
 	})
 
 	el_container.classList.add('mousebox')

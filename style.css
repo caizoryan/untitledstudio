@@ -173,11 +173,15 @@ p:hover {
   height: 20vh; 
   overflow: visible;
 	position: relative;
-  transition: all 250ms;
 	height: min-content;
+	transition:all 100ms;
 	/* background-color: var(--primary); */
 	/* color: var(--background); */
 	color: var(--primary);
+}
+
+.project:hover {
+	padding: 5em 1rem;
 }
 
 .button {
