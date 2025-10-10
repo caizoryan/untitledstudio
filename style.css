@@ -300,6 +300,8 @@ h3 {
 	pointer-events: none;
 	mix-blend-mode: exclusion;
 	color: white;
+
+	transition: opacity 250ms;
 	
 }
 

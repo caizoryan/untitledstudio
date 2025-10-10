@@ -1,7 +1,5 @@
 import { fade_in_any_stagger, fade_in_stagger, fade_out } from "./transition.js"
 
-let projects
-
 function setup_mouse (){
 	let el_container =	document.createElement("div")
 	let el_x = document.createElement("p")
@@ -9,7 +7,9 @@ function setup_mouse (){
 
 	el_container.style.position = "fixed"
 
+	let last_time
 	document.addEventListener("mousemove", (e) => {
+		last_time = new Date()
 		el_x.innerText = e.clientX + "px"
 		el_y.innerText = e.clientY + "px"
 		el_container.style.left = e.clientX+10 + "px"
@@ -18,10 +18,19 @@ function setup_mouse (){
 		let s = document.querySelector(".project:hover > .hidden")
 		let v = 50
 		if (s) s.style.transform=`
-rotateY(${ ((e.clientX / window.innerWidth ) - .5) * v }deg)
-rotateX(${ ((e.clientY / window.innerHeight) - .5) * v }deg)
-`
+			rotateY(${ ((e.clientX / window.innerWidth ) - .5) * v }deg)
+			rotateX(${ ((e.clientY / window.innerHeight) - .5) * v }deg)
+		`
+
+		el_container.style.opacity = 1
 	})
+
+	setInterval(() => {
+		if (last_time) {
+			if (new Date().getTime() - last_time.getTime() > 1) el_container.style.opacity = 0
+		}
+	}, 1000)
+
 
 	el_container.classList.add('mousebox')
 
@@ -49,22 +58,10 @@ function init_animations(){
 }
 
 function init(){
-	header_magic()
+	// header_magic()
 	setup_mouse()
 	remove_loader()
 	init_animations()
-}
-
-let mobile = 800
-window.onresize = check_mobile_and_update
-
-function check_mobile_and_update(){
-	if (window.innerWidth < mobile) update_size("mobile")
-	else update_size("2")
-}
-
-function update_size(size){
-	projects.forEach((e) => e.setAttribute("size", size))
 }
 
 init()
