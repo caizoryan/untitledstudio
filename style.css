@@ -67,20 +67,44 @@ body {
 .title-container {
 	margin: auto;
   width: var(--width);
-	padding: 1rem 0 1rem 0;
 	margin-bottom: 1em;
 	/* border-bottom: 2px dotted var(--light-primary); */
 	opacity: 0.8;
+	padding: 1rem 1rem;
 }
 
+.alt-span {
+	display: inline-block;
+	transition: 150ms;
+}
 
-.title-container p, span{
+.alt-span span {
+	font-weight: 100;
+	color: var(--background);
+	/* text-shadow: -1px -1px 0 var(--primary), */
+	/* 						 1px -1px 0  var(--primary), */
+	/* 						 -1px 1px 0  var(--primary), */
+	/* 						 1px 1px 0   var(--primary); */
+}
+
+.alt-span:hover {
+	/* font-family: "aa-btp" !important; */
+	color: black;
+	text-shadow: -1px -1px 0 var(--primary),
+							 1px -1px 0  var(--primary),
+							 -1px 1px 0  var(--primary),
+							 1px 1px 0   var(--primary);
+	transform: rotate(-20deg);
+	
+}
+
+p {
 	max-width: 70ch;
-	line-height: 1.3em;
-	font-weight: 600;
+}
+
+.title-container p {
 	color: var(--primary);
-
-
+	line-height: 1.3em;
 	padding: .5em 0;
 }
 
@@ -97,7 +121,7 @@ p:hover {
 
 .title-container h1 {
 	color: var(--primary);
-	font-size: 6rem;
+	font-size: 4.5rem;
 	/* text-transform: uppercase; */
 	padding: 2rem 0;
 	font-family: "aa-btp-rot";
@@ -138,7 +162,7 @@ p:hover {
 }
 
 .project {
-	padding: 3rem 0;
+	padding: 3rem 1rem;
 	grid-gap: 4em;
 	grid-template-columns: calc(40% - 2em) calc(60% - 2em);
 	border-top: 1px solid var(--light-primary);
@@ -150,9 +174,7 @@ p:hover {
   overflow: visible;
 	position: relative;
   transition: all 250ms;
-
-	cursor: ew-resize;
-	height: 60vh;
+	height: min-content;
 	/* background-color: var(--primary); */
 	/* color: var(--background); */
 	color: var(--primary);
@@ -170,6 +192,7 @@ h2 {
 
 h3 {
 	font-size: 2.0em;
+	font-weight: 600;
 	margin-bottom: 1.8rem;
 	font-family: "aa-btp";
 }
@@ -276,7 +299,14 @@ h3 {
 	
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (min-width: 1200px) {
+	.title-container h1 {
+		font-size: 6rem !important;
+	}
+}
+
+
+@media only screen and (max-width: 850px) {
 	.title-container h1 {
 		font-size: 3rem !important;
 	}
@@ -292,6 +322,12 @@ h3 {
 
 	.title-container {
 		height: auto;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.title-container h1 {
+		font-size: 2rem !important;
 	}
 }
 

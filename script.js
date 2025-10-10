@@ -1,4 +1,4 @@
-import { fade_in_stagger, fade_out } from "./transition.js"
+import { fade_in_any_stagger, fade_in_stagger, fade_out } from "./transition.js"
 
 let projects
 
@@ -24,9 +24,9 @@ function setup_mouse (){
 	document.body.appendChild(el_container)
 }
 
-function shuffle(){
-	let projects = Array.from(document.querySelectorAll(".project"))
-
+function header_magic(){
+	let el=document.querySelector("h1")
+	el.innerHTML = el.innerText.split("").map(e => `<div class="alt-span">${e == " " ? '<span>,</span>' : e}</div>`).join('')
 }
 
 function remove_loader(){
@@ -37,11 +37,12 @@ function remove_loader(){
 }
 
 function init_animations(){
-	fade_in_stagger(".project", 550, 150, 850)
+	fade_in_stagger(".project", 650, 150, 1150)
+	fade_in_any_stagger(".alt-span", 300, 80, 50)
 }
 
 function init(){
-	shuffle()
+	header_magic()
 	setup_mouse()
 	remove_loader()
 	init_animations()

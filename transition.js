@@ -55,6 +55,23 @@ const fade_in_stagger = (selector, r = 300, offset = 10, global_offset = 10) => 
   });
 };
 
+export const fade_in_any_stagger = (selector, r = 300, offset = 10, global_offset = 10) => {
+  $$(selector).forEach((e, i) => {
+		let t =  (offset * (i+1))
+    e.style.transition = `all 0ms`
+    e.style.opacity = 0;
+    e.style.transform = `translate${Math.random() > .5 ? "Y" : "Y"}(${Math.random() > .5 ? 50 : -50}px)`;
+
+    e.style.transform = ` translateY(50px) `;
+    setTimeout(() => {
+			console.log('running')
+			e.style.transition = `all ${r}ms`
+			e.style.opacity = 1;
+			e.style.transform = "translateY(0px) translateX(0px)"
+		}, global_offset + t);
+  });
+};
+
 const sweep_out = (selector, r = 300, offset = 10, cb = () => null) => {
   $$(selector).forEach((e) => {
     e.style.transition = `all 0ms`
