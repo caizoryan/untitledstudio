@@ -55,6 +55,13 @@ function remove_loader(){
 function init_animations(){
 	fade_in_stagger(".project", 650, 150, 1150)
 	// fade_in_any_stagger(".alt-span", 300, 80, 50)
+
+	document.querySelectorAll(".alt-span").forEach((e, i)  => {
+	e.style.color= "black";
+	setTimeout(() => {
+		e.style = ''
+	}, 300 + (i * 50))
+	})
 }
 
 function init(){
