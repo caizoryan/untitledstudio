@@ -9,6 +9,7 @@
 		--white: #eee;
 		--primary: var(--white);
 		--secondary: #ccc;
+		--lose-secondary: #cccccc88;
 		--black: #111;
 		--highlight: rgb(0, 0, 255);
 		--light-primary: rgba(227,215,215);
@@ -162,10 +163,10 @@ p:hover {
 }
 
 .project {
-	padding: 3rem 1rem;
-	grid-gap: 4em;
+	padding: 3rem 0;
+	grid-gap: 2em;
 	grid-template-columns: calc(40% - 2em) calc(60% - 2em);
-	border-top: 1px solid var(--light-primary);
+	border-top: 8px solid var(--light-primary);
 	/* padding: 1em 0; */
 	margin: 1rem 0;
 	margin-bottom: 3rem;
@@ -174,14 +175,18 @@ p:hover {
   overflow: visible;
 	position: relative;
 	height: min-content;
-	transition:all 100ms;
+	transition: all 250ms;
 	/* background-color: var(--primary); */
 	/* color: var(--background); */
 	color: var(--primary);
 }
 
 .project:hover {
-	padding: 5em 1rem;
+	padding: 4em 0;
+}
+
+.metadata > * {
+	padding-left:1rem;
 }
 
 .button {
@@ -197,7 +202,10 @@ h2 {
 h3 {
 	font-size: 2.0em;
 	font-weight: 600;
+	margin-top: .8rem;
+	padding-top: .8rem;
 	margin-bottom: 1.8rem;
+	border-top: 1px solid var(--primary);
 	font-family: "aa-btp";
 }
 
@@ -216,13 +224,10 @@ h3 {
   font-weight: 600;
 }
 
-.metadata {
-	/* border-right: 1px solid #0002; */
-	/* padding: 0 2rem; */
-}
-
 .metadata p {
-	color: var(--secondary)
+	color: var(--secondary);
+	border-top: .1px dotted var(--lose-secondary);
+	padding: .5rem 0;
 }
 
 .project > .metadata .ugh {
@@ -334,6 +339,12 @@ h3 {
 @media only screen and (max-width: 600px) {
 	.title-container h1 {
 		font-size: 2rem !important;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.title-container h1 {
+		font-size: 1.8rem !important;
 	}
 }
 

@@ -16,11 +16,16 @@ function setup_mouse (){
 		el_container.style.top = e.clientY +10+ "px"
 
 		let s = document.querySelector(".project:hover > .hidden")
-		let v = 50
-		if (s) s.style.transform=`
-			rotateY(${ ((e.clientX / window.innerWidth ) - .5) * v }deg)
-			rotateX(${ ((e.clientY / window.innerHeight) - .5) * v }deg)
+		let v = 20
+		if (s) {
+			let x_p = e.clientX / window.innerWidth 
+			let y_p = e.clientY / window.innerHeight
+			s.style.transform=`
+			rotateY(${ (x_p - .5) * v }deg)
+			rotateX(${ (y_p - .5) * v }deg)
 		`
+			s.style.boxShadow = `${(y_p - .5) * v}px ${(x_p - .5) * v}px 40px 10px rgb(0,0,0)`
+	}
 
 		el_container.style.opacity = 1
 	})

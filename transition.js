@@ -51,6 +51,7 @@ const fade_in_stagger = (selector, r = 300, offset = 10, global_offset = 10) => 
 			e.style.transition = `all ${r}ms`
 			e.style.opacity = 1;
 			e.style.transform = "translateY(0px)"
+			setTimeout(() => {e.style = ''}, r)
 		}, global_offset + t);
   });
 };
