@@ -24,7 +24,10 @@ function setup_mouse (){
 			rotateY(${ (x_p - .5) * v }deg)
 			rotateX(${ (y_p - .5) * v }deg)
 		`
-			s.style.boxShadow = `${(y_p - .5) * v}px ${(x_p - .5) * v}px 40px 10px rgb(0,0,0)`
+			s.style.boxShadow = `
+${(x_p - .5) * v*4}px ${(y_p - .5) * v*4}px 30px 10px #000,
+inset ${(x_p - .5) * v*4}px ${(y_p - .5) * v*4}px 30px 10px #fff7
+`
 	}
 
 		el_container.style.opacity = 1
