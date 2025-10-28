@@ -64,10 +64,7 @@ function header_magic(){
 	})
 
 	el.innerText = ''
-
 	splits.forEach(e => el.appendChild(e))
-
-	// el.innerHTML = el.innerText.split("").map(e => `<div class="alt-span">${e == " " ? '<span>,</span>' : e}</div>`).join('')
 }
 
 function remove_loader(){

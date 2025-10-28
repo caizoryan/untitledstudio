@@ -83,3 +83,22 @@ This is essentially it. If you know javascript, you already know this :)
 ### Why do this?
 
 There's a few reasons... for one I think it I really like how simple it is to implement as a static site generator. The whole generator with lots on comments and random utility fns in total amounts to about a 100 lines. Which I think is a very small and simple program. The other reason I really like it is, how transparent it is. There is not magic happening behind the back. There is no dependencies and you can look into exactly how it is working... I think that is very valuable, because then the program is actually editable and iterable...
+
+
+### TO DO THIS
+- change email to info@if-m.works
+- remove ig
+- change desc
+- add and update blurbs
+- make links not the link but just 'link'
+
+order
+- XKCD search
+- SPA
+- Gradex website
+- alt skool
+- hanah portfolio
+- guest lecture
+- API website
+- 100m screenings
+- Internet landlords
