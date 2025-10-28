@@ -49,8 +49,25 @@ inset ${(x_p - .5) * v*4}px ${(y_p - .5) * v*4}px 30px 10px #fff7
 }
 
 function header_magic(){
-	let el=document.querySelector("h1")
-	el.innerHTML = el.innerText.split("").map(e => `<div class="alt-span">${e == " " ? '<span>,</span>' : e}</div>`).join('')
+	let el = document.querySelector("h1")
+	let splits = el.innerText.split("").map(e =>{
+		let d = document.createElement('div')
+		d.classList.add('alt-span')
+		d.innerText = e
+		let span = document.createElement('span')
+		span.innerText = ','
+		if(e == " "){
+			d.appendChild(span)
+		}
+
+		return d
+	})
+
+	el.innerText = ''
+
+	splits.forEach(e => el.appendChild(e))
+
+	// el.innerHTML = el.innerText.split("").map(e => `<div class="alt-span">${e == " " ? '<span>,</span>' : e}</div>`).join('')
 }
 
 function remove_loader(){
