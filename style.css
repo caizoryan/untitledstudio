@@ -318,13 +318,23 @@ h3 {
 
 
 @media only screen and (max-width: 850px) {
-	.title-container h1 {
-		font-size: 3rem !important;
-	}
 
 	.project {
 		grid-template-columns: none;
 		grid-template-rows: auto auto;
+	}
+
+	.project h3 {
+		font-size: 2em;
+	}
+
+	.project p {
+		margin-top: 0;
+	}
+
+	.metadata p{
+		 border-top: none;
+		 padding: .3rem 0;
 	}
 
 	:root {
@@ -338,15 +348,16 @@ h3 {
 
 @media only screen and (max-width: 600px) {
 	.title-container h1 {
-		font-size: 2rem !important;
+		font-size: 3.3rem !important;
+		font-family: "aa-btp";
 	}
 }
 
-@media only screen and (max-width: 450px) {
-	.title-container h1 {
-		font-size: 1.8rem !important;
-	}
-}
+/* @media only screen and (max-width: 450px) { */
+/* 	.title-container h1 { */
+/* 		font-size: 1.8rem !important; */
+/* 	} */
+/* } */
 
 
 .loader {
@@ -356,4 +367,10 @@ h3 {
 	top: 0;
 	left: 0;
 	background: var(--background);
+}
+
+
+.word {
+	display: inline-block;
+	margin-right:.3em;
 }
