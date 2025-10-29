@@ -1,3 +1,3 @@
-A shared repository hosting Graphic Design student work of OCAD U's graduating class of 2025.
+A shared repository hosting Graphic Design Graduation Exhibition
 ---
-Resembles folders 
+The website was conceived as a virtual gallery, allowing visitors to explore student projects through curated collections, interactive layouts, and rich Y2K folder aesthetics. We also implemented personalized profile pages for each graduate, showcasing their work, process, and contact details, creating a lasting portfolio resource beyond the exhibition itself.

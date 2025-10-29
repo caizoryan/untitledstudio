@@ -1,1 +1,3 @@
-A holding page made for a Design talk given by Laura Coombs at OCAD University.
+Landing page designed for a speaker series run at OCAD University. 
+---
+The page was designed to reflect the energy and creativity of the series, featuring bold typography, dynamic layout, and immersive visuals. We incorporated speaker profiles, an event schedule, and seamless registration functionality, ensuring visitors could easily explore the lineup and reserve their spot with just a few clicks.

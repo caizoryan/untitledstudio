@@ -1,1 +1,4 @@
 Website for an Architecture + Interior Design firm.
+--
+We collaborated with Salankar Pashine to elevate the digital presence of their architecture and interior design practice. The redesign focused on creating a refined, minimal aesthetic that mirrors their design philosophy while improving user flow and project storytelling. We developed a dynamic portfolio system showcasing projects through immersive imagery and detailed narratives.
+--

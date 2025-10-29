@@ -1,1 +1,3 @@
 Film Catalogue for 100m Screenings.
+—--
+The website functions as both an archive and an active space for engagement, hosting films, film recommendations, and custom posters! The design extends the platform’s capabilities to accommodate diverse forms of moving-image work, while exploring the creative and conceptual possibilities of presenting cinema in an online environment.
