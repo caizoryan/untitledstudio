@@ -5,16 +5,7 @@ function id() {
 	return "id-" + Math.floor(Math.random() * Math.random() * 1000000)
 }
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
 let blocks = 8 
-
-shuffleArray(websites)
 
 html += `
 <html>
@@ -24,6 +15,7 @@ html += `
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
 	<div id="about" class="title-container">
 		<h1> If Machine Works </h1>
@@ -37,8 +29,7 @@ html += `
 			Positioned at the intersection of digital materiality, physical computing, and AI, our studio aims to push the boundaries of how the web can feel, function, and inspire.
 		</p>
 
-		<a href="https://instagram.com"><p class="item">instagram</p></a>
-		<a href="mailto:ifmachineworks@gmail"><p class="item">email</p></a>
+		<a href="mailto:info@if-m.works"><p class="item">email</p></a>
 	</div>
 
 
@@ -80,11 +71,7 @@ html += `
 html += website.link
 
 html += `" target="_blank">
-						<p >`
-
-html += website.link
-
-html += `</p></a>
+						<p> Link</p></a>
 					</a>
 				`
  } 

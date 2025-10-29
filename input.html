@@ -3,16 +3,7 @@ function id() {
 	return "id-" + Math.floor(Math.random() * Math.random() * 1000000)
 }
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
 let blocks = 8 
-
-shuffleArray(websites)
 %%
 <html>
 <head>
@@ -21,6 +12,7 @@ shuffleArray(websites)
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
 	<div id="about" class="title-container">
 		<h1> If Machine Works </h1>
@@ -54,7 +46,7 @@ shuffleArray(websites)
 
 				%%if (website.link) { %%
 					<a class="link" level=3 href="%%+website.link%%" target="_blank">
-						<p >%%+website.link%%</p></a>
+						<p> Link</p></a>
 					</a>
 				%% } %%
 				</div>

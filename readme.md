@@ -86,11 +86,11 @@ There's a few reasons... for one I think it I really like how simple it is to im
 
 
 ### TO DO THIS
-- change email to info@if-m.works
-- remove ig
+- ~~change email to info@if-m.works~~
+- ~~remove ig~~
 - change desc
 - add and update blurbs
-- make links not the link but just 'link'
+- ~~make links not the link but just 'link'~~
 - try wrap words in span and see if it doesn't break for mobile view
 - lineheight for mobile view
 - reduce title size for mobile view
