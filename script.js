@@ -128,7 +128,7 @@ function loader_animation(after) {
 	let duration = 700
 	let total = 2950
 
-	// fade_out_stagger(".loader span span", 400, 20, logoend)
+	fade_out_stagger(".loader span span", 400, 20, logoend)
 	fade_out_random_stagger(".loader span span", 400, 20, logoend)
 	fade_out(".loader span", 400, logoend+400, 'translateZ')
 	sweep_out(".loader", duration, total)
