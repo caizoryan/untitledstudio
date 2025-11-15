@@ -13,8 +13,23 @@ const fade_in = (selector, r = 300, offset = 10) => {
   });
 };
 
-const fade_out = (selector, r = 300, offset = 10) => {
+const fade_out = (selector, r = 300, offset = 10, transform = 'translateY') => {
   $$(selector).forEach((e) => {
+    setTimeout(() => {
+			e.style.transition = `none`
+			e.style.opacity = 1;
+			e.style.transform = transform + "(0px)"
+
+			e.style.transition = `all ${r}ms`
+			e.style.opacity = 0;
+			e.style.transform = transform + "(100px)"
+		}, offset);
+  });
+};
+
+const fade_out_random_stagger = (selector, r = 300, offset = 10, global_offset=10) => {
+  $$(selector).forEach((e,i,p) => {
+		let t = global_offset + (offset * (Math.floor(Math.random() * p.length)+1))
     e.style.transition = `none`
     e.style.opacity = 1;
 		e.style.transform = "translateY(0px)"
@@ -22,7 +37,7 @@ const fade_out = (selector, r = 300, offset = 10) => {
 			e.style.transition = `all ${r}ms`
 			e.style.opacity = 0;
 			e.style.transform = "translateY(100px)"
-		}, offset);
+		}, t);
   });
 };
 
@@ -98,4 +113,4 @@ const sweep_down = (selector, r = 300, offset = 10, cb = () => null) => {
   });
 }
 
-export { fade_out_stagger,fade_out,fade_in, fade_in_stagger, sweep_out, sweep_down };
+export { fade_out_random_stagger,fade_out_stagger,fade_out,fade_in, fade_in_stagger, sweep_out, sweep_down };

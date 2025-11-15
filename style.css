@@ -367,6 +367,29 @@ h3 {
 	top: 0;
 	left: 0;
 	background: var(--background);
+	background: #aaa;
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: monospace;
+	font-family: "Roboto Mono";
+	letter-spacing: .1em;
+	font-size: 4em;
+	font-weight: 100;
+}
+
+.loader .start {
+	opacity: .1;
+}
+
+.loader .logo {
+	padding: .2em;
+	border-right: 3px solid black;
+}
+
+.hide {
+	opacity: 0;
 }
 
 

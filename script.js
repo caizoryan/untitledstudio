@@ -1,4 +1,5 @@
-import { fade_in_any_stagger, fade_in_stagger, fade_out } from "./transition.js"
+import {dom} from './dom.js'
+import { fade_in_any_stagger, fade_in_stagger, fade_out, fade_out_random_stagger, fade_out_stagger, sweep_out } from "./transition.js"
 
 function setup_mouse() {
 	let el_container = document.createElement("div")
@@ -51,7 +52,7 @@ inset ${(x_p - .5) * v * 4}px ${(y_p - .5) * v * 4}px 30px 10px #fff7
 function header_magic() {
 	let el = document.querySelector("h1")
 	let splits = el.innerText.split(" ")
-		.map(word => 
+		.map(word =>
 			word.split("")
 				.map(e => {
 					let d = document.createElement('div')
@@ -66,7 +67,6 @@ function header_magic() {
 
 				})
 		).map(letters => {
-			console.log(letters)
 			let d = document.createElement('div')
 			d.classList.add('word')
 			letters.forEach(l => d.appendChild(l))
@@ -79,12 +79,62 @@ function header_magic() {
 	el.innerText = ''
 	splits.forEach(e => el.appendChild(e))
 }
+function random_string(length) {
+	var result = '';
+	var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@!#/{}[]';
+	var charactersLength = characters.length;
+	for (var i = 0; i < length; i++) {
+		result += characters.charAt(Math.floor(Math.random() * charactersLength));
+	}
+	return result;
+}
 
-function remove_loader() {
-	fade_out(".loader", 700, 250)
-	setTimeout(() => {
-		document.querySelector(".loader").remove()
-	}, 750)
+function loader_animation(after) {
+	let speed = 90
+	let logo = 'IF-MACHINE-WORKS '
+	let noise = random_string(logo.length)
+	let loader = document.querySelector('.loader')
+	let logoletters = logo.split('').map(e => dom('span'))
+	let logoel = dom('span.logo')
+	logoletters.forEach(e => logoel.appendChild(e))
+	let noiseel = dom('span.start', '')
+	let atindex = 0
+	loader.appendChild(logoel)
+	loader.appendChild(noiseel)
+
+	// after end wipe it
+	for (let i = 0; i < logo.length; i++) {
+		setTimeout(() => {
+			atindex = i
+			logo.slice(0, i).split('').forEach((e, i) => {
+				console.log(logoletters[i])
+				logoletters[i].innerText = e
+				if (e == '-') logoletters[i].classList.add('hide')
+			})
+			// logoel.innerText = "(" + logo.slice(0, i)
+		}, i * (speed))
+	}
+
+	for (let i = 0; i < logo.length*5; i++) {
+		setTimeout(() => {
+			noise = random_string(logo.length)
+			noise = noise.slice(0, -1)
+			noise += ''
+			noiseel.innerText = noise.slice(atindex)
+		}, i * (speed))
+	}
+
+	let logoend = 2000
+	let duration = 700
+	let total = 2950
+
+	// fade_out_stagger(".loader span span", 400, 20, logoend)
+	fade_out_random_stagger(".loader span span", 400, 20, logoend)
+	fade_out(".loader span", 400, logoend+400, 'translateZ')
+	sweep_out(".loader", duration, total)
+
+	setTimeout(() => { after() }, total)
+	setTimeout(() => {document.querySelector(".loader").remove() }, total+duration)
 }
 
 function init_animations() {
@@ -100,10 +150,10 @@ function init_animations() {
 }
 
 function init() {
-	header_magic()
 	setup_mouse()
-	remove_loader()
-	init_animations()
+	setTimeout(() => {
+		loader_animation(() => { header_magic(); init_animations() })
+	}, 850)
 }
 
 init()
