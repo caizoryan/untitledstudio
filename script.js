@@ -107,7 +107,6 @@ function loader_animation(after) {
 		setTimeout(() => {
 			atindex = i
 			logo.slice(0, i).split('').forEach((e, i) => {
-				console.log(logoletters[i])
 				logoletters[i].innerText = e
 				if (e == '-') logoletters[i].classList.add('hide')
 			})
