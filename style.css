@@ -19,6 +19,7 @@
 }
 ::selection {
   background-color: gray;
+  color: white;
 }
 
 @font-face {
