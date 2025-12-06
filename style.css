@@ -129,6 +129,7 @@ p:hover {
   padding: 2rem 0;
   font-family: "aa-btp-rot";
   max-width: 70vw;
+  line-height: 1.1;
 }
 
 .end h1 {
@@ -356,6 +357,7 @@ h3 {
   .title-container h1 {
     font-size: 3.3rem !important;
     font-family: "aa-btp";
+    line-height: 1;
   }
 }
 
